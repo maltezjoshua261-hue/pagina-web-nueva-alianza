@@ -23,7 +23,7 @@
     nav a{padding:8px 0;border-bottom:2px solid transparent;transition:.2s}
     nav a:hover,nav a:focus{color:var(--green);border-color:var(--green)}
     .menu{display:none;border:0;background:var(--pale);border-radius:9px;padding:9px 13px;color:var(--navy);font-size:1.2rem;cursor:pointer}
-    .hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(90deg,rgba(7,29,53,.84) 0%,rgba(7,29,53,.62) 48%,rgba(7,29,53,.12) 100%),url("IMAGN%202.webp") center center/cover no-repeat;color:white;min-height:570px}.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(7,29,53,.28),transparent 55%)}
+    .page-view{display:none}.page-view.active{display:block}.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(90deg,rgba(7,29,53,.84) 0%,rgba(7,29,53,.62) 48%,rgba(7,29,53,.12) 100%),url("IMAGN%202.webp") center center/cover no-repeat;color:white;min-height:570px}.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(7,29,53,.28),transparent 55%)}
     .hero:after{content:"";position:absolute;z-index:-1;width:440px;height:440px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-110px;bottom:-260px;box-shadow:0 0 0 45px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}
     .hero-inner{max-width:1160px;margin:auto;padding:145px 22px 150px;position:relative;z-index:1}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.08);padding:7px 14px;border-radius:30px;font-size:.76rem;letter-spacing:.11em;text-transform:uppercase}
@@ -100,7 +100,7 @@
       </nav>
     </div>
   </header>
-  <section class="hero" id="inicio">
+  <section class="hero page-view active" id="inicio">
     <div class="hero-inner">
       <span class="eyebrow">Educación · Comunidad · Futuro</span>
       <h1>NER Nueva Alianza</h1>
@@ -109,7 +109,7 @@
     </div>
   </section>
   <main>
-    <section id="nosotros"><div class="container">
+    <section class="page-view" id="nosotros"><div class="container">
       <div class="about-grid">
         <div><span class="section-kicker">Nuestra identidad</span><h2>Educando con Valores, Respeto y Ley</h2>
           <p class="intro">El NER Nueva Alianza reúne centros educativos que comparten el compromiso de acompañar el aprendizaje y el desarrollo integral de sus estudiantes.</p>
@@ -120,7 +120,7 @@
         </div>
       </div>
     </div></section>
-    <section class="history" id="historia"><div class="container">
+    <section class="history page-view" id="historia"><div class="container">
       <span class="section-kicker">Memoria y legado comunitario</span><h2>Nuestra historia</h2>
       <p class="history-lead">La historia del Centro Escolar Nueva Alianza es fruto de la organización, el esfuerzo y la esperanza de las familias de El Bote. Desde una pequeña casa comunitaria hasta la infraestructura actual, generaciones de pobladores, docentes y estudiantes han contribuido a mantener viva la educación.</p>
       <div class="history-timeline">
@@ -135,7 +135,7 @@
       <div class="history-note"><strong>Reconocimiento a quienes hicieron posible esta historia.</strong> Entre los primeros padres y pobladores que impulsaron las gestiones comunitarias se recuerda a Melitonio Gutiérrez Montenegro, Crecencio Hernández Ochoa, María Rivas (familia Lorente), Simón Hernández, Socorro Ruiz, Narciso Gutiérrez y Rosario Gadea. Su colaboración, junto con la de muchas otras familias, permitió abrir camino a la educación.</div>
       <p class="history-caption">Entre los docentes recordados en las primeras etapas también figuran Oscar Arnulfo Pérez Hernández, Martha Toruño, Maribel Lanuza y Pablo Úbeda, procedente de San Rafael del Norte. La comunidad conserva además testimonios de otros educadores que contribuyeron al crecimiento del centro.</p>
     </div></section>
-    <section class="schools" id="centros"><div class="container">
+    <section class="schools page-view" id="centros"><div class="container">
       <span class="section-kicker">Nuestra red educativa</span><h2>Ocho centros, una comunidad</h2>
       <p class="intro">Conoce los centros educativos que forman parte del NER Nueva Alianza.</p>
       <div class="school-grid">
@@ -149,7 +149,7 @@
         <article class="school"><div class="school-num">08</div><h3>Sector de Limón</h3><p>Centro educativo del NER</p></article>
       </div>
     </div></section>
-    <section id="noticias"><div class="container">
+    <section class="page-view" id="noticias"><div class="container">
       <span class="section-kicker">Comunidad educativa</span><h2>Noticias y actividades</h2>
       <p class="intro">Este espacio permitirá publicar avisos, celebraciones, encuentros pedagógicos, proyectos y experiencias de nuestros centros.</p>
       <div class="news-grid">
@@ -158,12 +158,12 @@
         <article class="news-card"><div class="news-placeholder">🌱</div><div class="news-content"><small>Proyectos</small><h3>Experiencias educativas</h3><p>Compartiremos iniciativas y logros de nuestra comunidad educativa.</p></div></article>
       </div>
     </div></section>
-    <section class="gallery" id="galeria"><div class="container">
+    <section class="gallery page-view" id="galeria"><div class="container">
       <span class="section-kicker">Nuestros recuerdos</span><h2>Galería fotográfica</h2>
       <div class="gallery-grid"><figure class="gallery-card"><img src="Imagen%20de%20la%20primera%20escuela.webp" alt="Imagen histórica de la primera escuela comunitaria de Nueva Alianza" loading="lazy"><figcaption><h3>La primera escuela comunitaria</h3><p>Un recuerdo de los primeros espacios que dieron inicio a la historia educativa de Nueva Alianza.</p></figcaption></figure><figure class="gallery-card"><img src="NUEVA%20ALIANZA.jfif" alt="Recuerdo histórico de la comunidad educativa Nueva Alianza" loading="lazy"><figcaption><h3>Un recuerdo de Nueva Alianza</h3><p>Fotografía que forma parte de la memoria de nuestra comunidad educativa.</p></figcaption></figure><figure class="gallery-card"><img src="Primeras%20palillonas%20a%C3%B1o%201995.webp" alt="Primeras palillonas de Nueva Alianza en 1995" loading="lazy"><figcaption><h3>Primeras palillonas · 1995</h3><p>Una memoria de las actividades culturales y estudiantiles de nuestra escuela.</p></figcaption></figure></div>
       <div style="margin-top:42px"><span class="section-kicker">Memoria institucional · Mayo de 2021</span><h2 style="font-size:1.65rem;margin-top:7px">Inauguración del Centro Educativo Nueva Alianza</h2><p class="intro">Inauguración del Centro Educativo Nueva Alianza, Comunidad El Bote, El Cuá, Jinotega, con la construcción de aulas, biblioteca, oficina de dirección, cancha polivalente y dotación de mobiliario para fortalecer las condiciones de enseñanza y aprendizaje de nuestra comunidad educativa.</p></div><div class="gallery-grid"><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-01.jpg" alt="Fotografía 1 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-02.jpg" alt="Fotografía 2 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-03.jpg" alt="Fotografía 3 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-04.jpg" alt="Fotografía 4 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-05.jpg" alt="Fotografía 5 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-06.jpg" alt="Fotografía 6 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure><figure class="gallery-card"><img src="inauguracion-nueva-alianza-2021-07.jpg" alt="Fotografía 7 de la inauguración del Centro Educativo Nueva Alianza en 2021" loading="lazy"><figcaption><h3>Inauguración · Mayo de 2021</h3><p>Registro fotográfico de las nuevas instalaciones del centro educativo.</p></figcaption></figure></div>
     </div></section>
-    <section id="contacto"><div class="container">
+    <section class="page-view" id="contacto"><div class="container">
       <span class="section-kicker">Estamos para servir</span><h2>Contacto institucional</h2>
       <div class="contact-grid">
         <div class="contact-box"><h3>NER Nueva Alianza</h3><p>El Bote, municipio de El Cuá, departamento de Jinotega, Nicaragua.</p></div>
@@ -175,5 +175,32 @@
     <div class="footer-mark"><div class="footer-seal">NER</div><div><strong>NER NUEVA ALIANZA</strong><br><small>Educando con Valores, Respeto y Ley</small></div></div>
     <small>Portal institucional · El Cuá, Jinotega, Nicaragua</small>
   </div></footer>
+  <script>
+    (function(){
+      const views = Array.from(document.querySelectorAll(".page-view"));
+      const nav = document.querySelector("nav");
+      const menu = document.querySelector(".menu");
+      function showView(){
+        const requested = (window.location.hash || "#inicio").slice(1);
+        const target = views.find(view => view.id === requested) || views.find(view => view.id === "inicio");
+        views.forEach(view => view.classList.toggle("active", view === target));
+        if(nav) nav.querySelectorAll("a").forEach(link => link.classList.toggle("current", link.hash === "#" + target.id));
+        if(nav) nav.classList.remove("open");
+        if(menu) menu.setAttribute("aria-expanded", "false");
+        window.scrollTo({top:0,behavior:"smooth"});
+      }
+      document.addEventListener("click", function(event){
+        const link = event.target.closest("a[href^=\"#\"]");
+        if(!link) return;
+        const id = link.getAttribute("href").slice(1);
+        if(!views.some(view => view.id === id)) return;
+        event.preventDefault();
+        if(window.location.hash === "#" + id) showView();
+        else window.location.hash = id;
+      });
+      window.addEventListener("hashchange", showView);
+      showView();
+    })();
+  </script>
 </body>
 </html>
