@@ -1,0 +1,16 @@
+NER NUEVA ALIANZA — PORTAL INSTITUCIONAL
+
+Contenido:
+- index.html: primera versión de la página web.
+
+Para probar:
+1. Abre index.html en un navegador.
+2. Para publicarla gratis, crea un repositorio en GitHub llamado ner-nueva-alianza.
+3. Sube index.html a la raíz del repositorio.
+4. En Settings > Pages, selecciona Deploy from a branch, rama main y carpeta /(root), y guarda.
+5. GitHub mostrará la dirección pública del sitio.
+
+Antes de publicar:
+- Sustituir o confirmar textos institucionales.
+- Añadir logotipo oficial y fotografías autorizadas.
+- Añadir teléfono/correo oficial si se desea.
