@@ -278,9 +278,15 @@
             <input id="bibliotecaEmail" type="email" value="maltezjoshua261@gmail.com" autocomplete="username" required>
             <label for="bibliotecaPassword">Contraseña</label>
             <input id="bibliotecaPassword" type="password" autocomplete="current-password" minlength="8" required>
-            <div class="admin-actions"><button class="btn btn-green" type="submit">Iniciar sesión</button><button class="btn btn-light" type="button" id="bibliotecaSignup">Crear acceso de dirección</button></div>
+            <div class="admin-actions"><button class="btn btn-green" type="submit">Iniciar sesión</button><button class="btn btn-light" type="button" id="bibliotecaSignup">Crear / configurar acceso</button></div>
           </form>
-          <p id="bibliotecaAuthStatus" class="admin-status" role="status">Solo el correo autorizado puede administrar los materiales.</p>
+          <p id="bibliotecaAuthStatus" class="admin-status" role="status">Correo autorizado: maltezjoshua261@gmail.com. Si la cuenta ya existe, solicita un enlace para configurar la contraseña.</p>
+          <form id="bibliotecaRecoveryForm" class="admin-form" hidden>
+            <h4>Configurar contraseña de dirección</h4>
+            <label for="bibliotecaNewPassword">Nueva contraseña (mínimo 8 caracteres)</label>
+            <input id="bibliotecaNewPassword" type="password" minlength="8" autocomplete="new-password" required>
+            <button class="btn btn-green" type="submit">Guardar contraseña</button>
+          </form>
         </div>
         <div id="bibliotecaDashboard" hidden>
           <div class="admin-heading"><div><h3>Panel de administración</h3><p id="bibliotecaSignedEmail"></p></div><button class="btn btn-light" type="button" id="bibliotecaLogout">Cerrar sesión</button></div>
@@ -476,8 +482,22 @@
       }
       if(biblioteca){
         loadPublicLibrary();
+        const recoveryForm=document.getElementById("bibliotecaRecoveryForm");
         biblioteca.auth.getSession().then(({data})=>updateAdminUI(data.session));
-        biblioteca.auth.onAuthStateChange((_event,session)=>{updateAdminUI(session);});
+        biblioteca.auth.onAuthStateChange((event,session)=>{
+          if(event==="PASSWORD_RECOVERY"&&recoveryForm){recoveryForm.hidden=false;setStatus(authStatus,"Enlace válido. Ahora establece una contraseña nueva.");}
+          updateAdminUI(session);
+        });
+        if(recoveryForm)recoveryForm.addEventListener("submit",async event=>{
+          event.preventDefault();
+          const password=document.getElementById("bibliotecaNewPassword").value;
+          if(password.length<8){setStatus(authStatus,"La contraseña debe tener al menos 8 caracteres.",true);return;}
+          setStatus(authStatus,"Guardando nueva contraseña...");
+          const {error}=await biblioteca.auth.updateUser({password});
+          if(error){setStatus(authStatus,"No se pudo guardar la contraseña: "+error.message,true);return;}
+          recoveryForm.hidden=true;
+          setStatus(authStatus,"Contraseña configurada correctamente. Ya puedes ingresar con tu correo y la nueva contraseña.");
+        });
         document.getElementById("bibliotecaLogin").addEventListener("submit",async event=>{
           event.preventDefault();const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();const password=document.getElementById("bibliotecaPassword").value;
           if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"El correo no está autorizado para este panel.",true);return;}
@@ -486,12 +506,13 @@
           if(error)setStatus(authStatus,"No se pudo iniciar sesión: "+error.message,true);
         });
         document.getElementById("bibliotecaSignup").addEventListener("click",async()=>{
-          const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();const password=document.getElementById("bibliotecaPassword").value;
+          const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();
           if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"Usa el correo autorizado de dirección.",true);return;}
-          if(password.length<8){setStatus(authStatus,"Crea una contraseña de al menos 8 caracteres en el campo Contraseña.",true);return;}
-          setStatus(authStatus,"Creando acceso. Si la confirmación por correo está activa, revisa tu bandeja de entrada.");
-          const {error}=await biblioteca.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin+window.location.pathname+"#biblioteca-admin"}});
-          if(error)setStatus(authStatus,"No se pudo crear el acceso: "+error.message,true);else setStatus(authStatus,"Solicitud de acceso enviada. Revisa tu correo para confirmar la cuenta.");
+          setStatus(authStatus,"Solicitando enlace seguro para configurar el acceso...");
+          const redirectTo=window.location.origin+window.location.pathname+"#biblioteca-admin";
+          const {error}=await biblioteca.auth.resetPasswordForEmail(email,{redirectTo});
+          if(error)setStatus(authStatus,"No se pudo solicitar el enlace: "+error.message,true);
+          else setStatus(authStatus,"Solicitud procesada. Si el servicio de correo está habilitado, recibirás un enlace para configurar tu contraseña. Revisa también spam y correo no deseado.");
         });
         document.getElementById("bibliotecaLogout").addEventListener("click",()=>biblioteca.auth.signOut());
         document.getElementById("bibliotecaUploadForm").addEventListener("submit",async event=>{
