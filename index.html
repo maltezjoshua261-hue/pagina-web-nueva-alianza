@@ -7,174 +7,145 @@
   <meta name="theme-color" content="#12345a">
   <title>NER Nueva Alianza | Portal Institucional</title>
   <style>
-    :root {
-      --navy:#12345a; --blue:#1c5687; --green:#34845a;
-      --pale:#edf4f7; --ink:#203246; --muted:#647487;
-      --white:#fff; --line:#dce5eb; --shadow:0 12px 32px rgba(18,52,90,.09);
-    }
+    :root{--navy:#102f50;--blue:#1d5d91;--green:#34845a;--gold:#d5a94e;--pale:#f1f6f8;--ink:#24384b;--muted:#65788a;--line:#dce6eb;--white:#fff;--shadow:0 16px 40px rgba(16,47,80,.11)}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
     a{color:inherit;text-decoration:none}
-    .topbar{background:var(--navy);color:#eaf3fb;font-size:.86rem;padding:8px 5%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    header{background:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 16px rgba(0,0,0,.06)}
-    .navwrap{max-width:1160px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .topbar{background:var(--navy);color:#eaf3fb;font-size:.82rem;padding:8px max(5%,calc((100% - 1120px)/2));display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    header{background:rgba(255,255,255,.97);position:sticky;top:0;z-index:20;box-shadow:0 4px 22px rgba(16,47,80,.08);backdrop-filter:blur(12px)}
+    .navwrap{max-width:1160px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{display:flex;align-items:center;gap:12px;min-width:230px}
-    .seal{width:48px;height:48px;border-radius:14px;background:linear-gradient(145deg,var(--navy),var(--green));display:grid;place-items:center;color:white;font-weight:800;letter-spacing:-1px}
-    .brand strong{display:block;color:var(--navy);font-size:1.03rem;line-height:1.2}
-    .brand small{color:var(--muted);font-size:.75rem}
-    nav{display:flex;gap:19px;align-items:center;font-size:.9rem;font-weight:600;color:#334c62}
-    nav a:hover{color:var(--green)}
-    .menu{display:none;border:0;background:var(--pale);border-radius:8px;padding:9px 12px;color:var(--navy);font-size:1.1rem}
-    .hero{background:linear-gradient(115deg,rgba(10,38,68,.94),rgba(20,75,91,.82)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85') center/cover;color:white}
-    .hero-inner{max-width:1160px;margin:auto;padding:88px 22px 94px}
-    .eyebrow{display:inline-block;border:1px solid rgba(255,255,255,.4);padding:6px 12px;border-radius:30px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
-    h1{font-size:clamp(2.3rem,5vw,4.3rem);line-height:1.08;max-width:780px;margin:20px 0 15px;letter-spacing:-.035em}
-    .hero p{font-size:1.12rem;max-width:660px;color:#e4eef5;margin:0 0 28px}
-    .btn{display:inline-block;padding:12px 19px;border-radius:8px;font-weight:700;margin:4px 7px 4px 0}
+    .seal{width:50px;height:50px;border-radius:15px;background:linear-gradient(145deg,var(--navy),var(--green));display:grid;place-items:center;color:white;font-weight:900;letter-spacing:-1px;box-shadow:0 7px 17px rgba(16,47,80,.2);border:2px solid #e7f0eb}
+    .brand strong{display:block;color:var(--navy);font-size:1.02rem;line-height:1.2;letter-spacing:.035em}
+    .brand small{color:var(--muted);font-size:.76rem}
+    nav{display:flex;gap:17px;align-items:center;font-size:.88rem;font-weight:700;color:#334c62}
+    nav a{padding:8px 0;border-bottom:2px solid transparent;transition:.2s}
+    nav a:hover,nav a:focus{color:var(--green);border-color:var(--green)}
+    .menu{display:none;border:0;background:var(--pale);border-radius:9px;padding:9px 13px;color:var(--navy);font-size:1.2rem;cursor:pointer}
+    .hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(110deg,rgba(10,35,62,.94),rgba(17,75,78,.76)),url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1900&q=85') center/cover;color:white}
+    .hero:after{content:"";position:absolute;z-index:-1;width:440px;height:440px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-110px;bottom:-260px;box-shadow:0 0 0 45px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}
+    .hero-inner{max-width:1160px;margin:auto;padding:100px 22px 108px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.08);padding:7px 14px;border-radius:30px;font-size:.76rem;letter-spacing:.11em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:#9ed6a9}
+    h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.04;max-width:780px;margin:22px 0 17px;letter-spacing:-.045em}
+    .hero p{font-size:1.12rem;max-width:680px;color:#e5eef5;margin:0 0 29px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:9px;font-weight:700;margin:4px 8px 4px 0;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px rgba(0,0,0,.18)}
     .btn-green{background:var(--green);color:#fff}
-    .btn-light{border:1px solid rgba(255,255,255,.65);color:white}
-    main section{padding:70px 22px}
+    .btn-light{border:1px solid rgba(255,255,255,.65);color:white;background:rgba(255,255,255,.06)}
+    main section{padding:76px 22px}
     .container{max-width:1100px;margin:auto}
-    .section-kicker{color:var(--green);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}
-    h2{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--navy);line-height:1.15;margin:8px 0 12px}
-    .intro{max-width:700px;color:var(--muted);margin:0 0 30px}
-    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
-    .about-panel{background:var(--pale);padding:28px;border-radius:16px;border-left:5px solid var(--green)}
+    .section-kicker{color:var(--green);font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.14em}
+    h2{font-size:clamp(1.9rem,3.4vw,2.65rem);color:var(--navy);line-height:1.15;margin:8px 0 13px;letter-spacing:-.025em}
+    .intro{max-width:720px;color:var(--muted);margin:0 0 31px}
+    .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+    .about-panel{background:linear-gradient(135deg,#f1f6f8,#f7faf8);padding:26px 28px;border-radius:16px;border-left:4px solid var(--green)}
     .about-panel p{margin:0;color:#42576a}
-    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-    .value{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;text-align:center;font-weight:700;color:var(--navy)}
-    .value span{display:block;font-size:1.35rem;margin-bottom:4px}
-    .schools{background:#f5f8fa}
-    .school-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-    .school{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px;min-height:145px;box-shadow:0 4px 15px rgba(18,52,90,.035)}
-    .school-num{display:grid;place-items:center;width:34px;height:34px;background:#e6f1eb;color:var(--green);border-radius:10px;font-weight:800;margin-bottom:13px}
-    .school h3{font-size:1rem;color:var(--navy);margin:0 0 6px}
-    .school p{font-size:.83rem;color:var(--muted);margin:0}
-    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-    .news-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
-    .news-placeholder{height:145px;background:linear-gradient(135deg,#dce9ee,#e9f1e9);display:grid;place-items:center;color:#537086;font-size:2rem}
-    .news-content{padding:18px}
-    .news-content small{color:var(--green);font-weight:700;text-transform:uppercase;font-size:.72rem}
-    .news-content h3{margin:6px 0;color:var(--navy);font-size:1.05rem}
+    .values{display:grid;grid-template-columns:1fr;gap:12px}
+    .value{display:flex;align-items:center;gap:15px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 17px;font-weight:700;color:var(--navy);box-shadow:0 5px 16px rgba(16,47,80,.04)}
+    .value span{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;background:#eaf3ed;border-radius:12px;font-size:1.25rem}
+    .schools{background:var(--pale);position:relative}
+    .school-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .school{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;min-height:158px;box-shadow:0 5px 17px rgba(16,47,80,.045);transition:transform .22s,box-shadow .22s}
+    .school:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),#8ab99a)}
+    .school:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .school-num{display:grid;place-items:center;width:36px;height:36px;background:#e8f2eb;color:var(--green);border-radius:11px;font-weight:900;margin-bottom:14px;font-size:.86rem}
+    .school h3{font-size:1rem;color:var(--navy);margin:0 0 6px;line-height:1.3}
+    .school p{font-size:.82rem;color:var(--muted);margin:0}
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .news-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;box-shadow:0 5px 18px rgba(16,47,80,.045)}
+    .news-placeholder{height:150px;background:linear-gradient(135deg,#dce9ee,#e9f1e9);display:grid;place-items:center;color:#537086;font-size:2.2rem}
+    .news-content{padding:20px}
+    .news-content small{color:var(--green);font-weight:800;text-transform:uppercase;font-size:.7rem;letter-spacing:.1em}
+    .news-content h3{margin:7px 0;color:var(--navy);font-size:1.08rem}
     .news-content p{margin:0;color:var(--muted);font-size:.88rem}
-    .gallery{background:var(--pale)}
-    .gallery-note{border:1px dashed #9bb2c1;padding:25px;border-radius:13px;color:#53697b;background:rgba(255,255,255,.65)}
+    .gallery{background:#edf4f7}
+    .gallery-note{border:1px dashed #9bb2c1;padding:28px;border-radius:14px;color:#53697b;background:rgba(255,255,255,.72);text-align:center}
+    .gallery-note span{display:block;font-size:2rem;margin-bottom:8px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .contact-box{padding:24px;border:1px solid var(--line);border-radius:14px}
-    .contact-box h3{color:var(--navy);margin-top:0}
-    footer{background:#0d2947;color:#d9e5ef;padding:30px 22px}
-    .footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .contact-box{padding:25px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 5px 18px rgba(16,47,80,.04)}
+    .contact-box h3{color:var(--navy);margin:0 0 8px}
+    .contact-box p{margin:0;color:var(--muted)}
+    footer{background:#0d2947;color:#d9e5ef;padding:32px 22px}
+    .footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
     footer small{color:#aebfce}
-    @media(max-width:850px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){.topbar{font-size:.75rem}.hero-inner{padding:66px 22px 72px}main section{padding:54px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.92rem}}
+    .footer-mark{display:flex;align-items:center;gap:12px}
+    .footer-seal{width:38px;height:38px;border:1px solid rgba(255,255,255,.35);border-radius:11px;display:grid;place-items:center;font-weight:900}
+    @media(max-width:900px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:600px){.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:72px 21px 78px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <span>El Bote · El Cuá · Jinotega · Nicaragua</span>
-    <span>Portal institucional de la comunidad educativa</span>
-  </div>
+  <div class="topbar"><span>El Bote · El Cuá · Jinotega · Nicaragua</span><span>Portal institucional de la comunidad educativa</span></div>
   <header>
     <div class="navwrap">
-      <a class="brand" href="#inicio" aria-label="Inicio NER Nueva Alianza">
-        <div class="seal">NER</div>
-        <div><strong>NUEVA ALIANZA</strong><small>Red Educativa</small></div>
-      </a>
-      <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-      <nav>
-        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#centros">Centros educativos</a>
-        <a href="#noticias">Noticias</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+      <a class="brand" href="#inicio" aria-label="Inicio NER Nueva Alianza"><div class="seal">NER</div><div><strong>NUEVA ALIANZA</strong><small>Red Educativa</small></div></a>
+      <button class="menu" aria-label="Abrir menú" aria-expanded="false" onclick="const n=document.querySelector('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
-
   <section class="hero" id="inicio">
     <div class="hero-inner">
       <span class="eyebrow">Educación · Comunidad · Futuro</span>
       <h1>NER Nueva Alianza</h1>
       <p>Una comunidad educativa que trabaja por una educación de calidad, con valores, respeto y compromiso con el futuro de nuestras niñas, niños y jóvenes.</p>
-      <a class="btn btn-green" href="#centros">Conocer nuestros centros</a>
-      <a class="btn btn-light" href="#nosotros">Conócenos</a>
+      <a class="btn btn-green" href="#centros">Conocer nuestros centros</a><a class="btn btn-light" href="#nosotros">Conócenos</a>
     </div>
   </section>
-
   <main>
-    <section id="nosotros">
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <span class="section-kicker">Nuestra identidad</span>
-            <h2>Educando con Valores, Respeto y Ley</h2>
-            <p class="intro">El NER Nueva Alianza reúne centros educativos que comparten el compromiso de acompañar el aprendizaje y el desarrollo integral de sus estudiantes.</p>
-            <div class="about-panel"><p>Este espacio institucional está destinado a compartir información, actividades, experiencias educativas y logros de nuestra comunidad. La historia, misión y visión oficiales podrán incorporarse cuando sean proporcionadas por la dirección.</p></div>
-          </div>
-          <div>
-            <div class="values">
-              <div class="value"><span>✦</span>Valores</div>
-              <div class="value"><span>🤝</span>Respeto</div>
-              <div class="value"><span>📚</span>Aprendizaje</div>
-            </div>
-          </div>
+    <section id="nosotros"><div class="container">
+      <div class="about-grid">
+        <div><span class="section-kicker">Nuestra identidad</span><h2>Educando con Valores, Respeto y Ley</h2>
+          <p class="intro">El NER Nueva Alianza reúne centros educativos que comparten el compromiso de acompañar el aprendizaje y el desarrollo integral de sus estudiantes.</p>
+          <div class="about-panel"><p>Este espacio institucional está destinado a compartir información, actividades, experiencias educativas y logros de nuestra comunidad. La historia, misión y visión oficiales podrán incorporarse cuando sean proporcionadas por la dirección.</p></div>
+        </div>
+        <div class="values">
+          <div class="value"><span>✦</span>Valores</div><div class="value"><span>🤝</span>Respeto</div><div class="value"><span>📚</span>Aprendizaje</div>
         </div>
       </div>
-    </section>
-
-    <section class="schools" id="centros">
-      <div class="container">
-        <span class="section-kicker">Nuestra red educativa</span>
-        <h2>Ocho centros, una comunidad</h2>
-        <p class="intro">Conoce los centros educativos que forman parte del NER Nueva Alianza.</p>
-        <div class="school-grid">
-          <article class="school"><div class="school-num">01</div><h3>Hugo Chávez Frías</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">02</div><h3>Nueva Alianza</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">03</div><h3>Rosa Sarmiento</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">04</div><h3>Nueva Jerusalén</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">05</div><h3>La Esperanza</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">06</div><h3>La Unión No. 3</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">07</div><h3>Santa Lucía</h3><p>Centro educativo del NER</p></article>
-          <article class="school"><div class="school-num">08</div><h3>Sector de Limón</h3><p>Centro educativo del NER</p></article>
-        </div>
+    </div></section>
+    <section class="schools" id="centros"><div class="container">
+      <span class="section-kicker">Nuestra red educativa</span><h2>Ocho centros, una comunidad</h2>
+      <p class="intro">Conoce los centros educativos que forman parte del NER Nueva Alianza.</p>
+      <div class="school-grid">
+        <article class="school"><div class="school-num">01</div><h3>Hugo Chávez Frías</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">02</div><h3>Nueva Alianza</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">03</div><h3>Rosa Sarmiento</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">04</div><h3>Nueva Jerusalén</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">05</div><h3>La Esperanza</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">06</div><h3>La Unión No. 3</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">07</div><h3>Santa Lucía</h3><p>Centro educativo del NER</p></article>
+        <article class="school"><div class="school-num">08</div><h3>Sector de Limón</h3><p>Centro educativo del NER</p></article>
       </div>
-    </section>
-
-    <section id="noticias">
-      <div class="container">
-        <span class="section-kicker">Comunidad educativa</span>
-        <h2>Noticias y actividades</h2>
-        <p class="intro">Este espacio permitirá publicar avisos, celebraciones, encuentros pedagógicos, proyectos y experiencias de nuestros centros.</p>
-        <div class="news-grid">
-          <article class="news-card"><div class="news-placeholder">📣</div><div class="news-content"><small>Comunicados</small><h3>Información institucional</h3><p>Próximamente se compartirán aquí los avisos oficiales del NER.</p></div></article>
-          <article class="news-card"><div class="news-placeholder">🎓</div><div class="news-content"><small>Actividades</small><h3>Vida escolar</h3><p>Un espacio para destacar las actividades de estudiantes y docentes.</p></div></article>
-          <article class="news-card"><div class="news-placeholder">🌱</div><div class="news-content"><small>Proyectos</small><h3>Experiencias educativas</h3><p>Compartiremos iniciativas y logros de nuestra comunidad educativa.</p></div></article>
-        </div>
+    </div></section>
+    <section id="noticias"><div class="container">
+      <span class="section-kicker">Comunidad educativa</span><h2>Noticias y actividades</h2>
+      <p class="intro">Este espacio permitirá publicar avisos, celebraciones, encuentros pedagógicos, proyectos y experiencias de nuestros centros.</p>
+      <div class="news-grid">
+        <article class="news-card"><div class="news-placeholder">📣</div><div class="news-content"><small>Comunicados</small><h3>Información institucional</h3><p>Próximamente se compartirán aquí los avisos oficiales del NER.</p></div></article>
+        <article class="news-card"><div class="news-placeholder">🎓</div><div class="news-content"><small>Actividades</small><h3>Vida escolar</h3><p>Un espacio para destacar las actividades de estudiantes y docentes.</p></div></article>
+        <article class="news-card"><div class="news-placeholder">🌱</div><div class="news-content"><small>Proyectos</small><h3>Experiencias educativas</h3><p>Compartiremos iniciativas y logros de nuestra comunidad educativa.</p></div></article>
       </div>
-    </section>
-
-    <section class="gallery" id="galeria">
-      <div class="container">
-        <span class="section-kicker">Nuestros recuerdos</span>
-        <h2>Galería fotográfica</h2>
-        <div class="gallery-note">Próximamente: fotografías de los centros educativos, actividades escolares, proyectos y celebraciones. Se agregarán imágenes autorizadas por la comunidad educativa.</div>
+    </div></section>
+    <section class="gallery" id="galeria"><div class="container">
+      <span class="section-kicker">Nuestros recuerdos</span><h2>Galería fotográfica</h2>
+      <div class="gallery-note"><span>📷</span>Próximamente: fotografías de los centros educativos, actividades escolares, proyectos y celebraciones. Se agregarán imágenes autorizadas por la comunidad educativa.</div>
+    </div></section>
+    <section id="contacto"><div class="container">
+      <span class="section-kicker">Estamos para servir</span><h2>Contacto institucional</h2>
+      <div class="contact-grid">
+        <div class="contact-box"><h3>NER Nueva Alianza</h3><p>El Bote, municipio de El Cuá, departamento de Jinotega, Nicaragua.</p></div>
+        <div class="contact-box"><h3>Comunicación</h3><p>Los canales oficiales de contacto se incorporarán cuando la dirección proporcione los datos correspondientes.</p></div>
       </div>
-    </section>
-
-    <section id="contacto">
-      <div class="container">
-        <span class="section-kicker">Estamos para servir</span>
-        <h2>Contacto institucional</h2>
-        <div class="contact-grid">
-          <div class="contact-box"><h3>NER Nueva Alianza</h3><p>El Bote, municipio de El Cuá, departamento de Jinotega, Nicaragua.</p></div>
-          <div class="contact-box"><h3>Comunicación</h3><p>Los canales oficiales de contacto se incorporarán cuando la dirección proporcione los datos correspondientes.</p></div>
-        </div>
-      </div>
-    </section>
+    </div></section>
   </main>
-  <footer>
-    <div class="footer-inner">
-      <div><strong>NER NUEVA ALIANZA</strong><br><small>Educando con Valores, Respeto y Ley</small></div>
-      <small>Portal institucional · El Cuá, Jinotega, Nicaragua</small>
-    </div>
-  </footer>
+  <footer><div class="footer-inner">
+    <div class="footer-mark"><div class="footer-seal">NER</div><div><strong>NER NUEVA ALIANZA</strong><br><small>Educando con Valores, Respeto y Ley</small></div></div>
+    <small>Portal institucional · El Cuá, Jinotega, Nicaragua</small>
+  </div></footer>
 </body>
 </html>
