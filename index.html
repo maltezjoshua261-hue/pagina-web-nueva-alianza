@@ -23,7 +23,7 @@
     nav a{padding:8px 0;border-bottom:2px solid transparent;transition:.2s}
     nav a:hover,nav a:focus{color:var(--green);border-color:var(--green)}
     .menu{display:none;border:0;background:var(--pale);border-radius:9px;padding:9px 13px;color:var(--navy);font-size:1.2rem;cursor:pointer}
-    .hero{position:relative;isolation:isolate;overflow:hidden;background:#102f50;color:white}.hero:before{content:"";position:absolute;z-index:-2;inset:-12px;background:linear-gradient(90deg,rgba(10,35,62,.76),rgba(10,35,62,.58)),url('PRTADA%201.jfif') center 38%/cover;filter:blur(9px);transform:scale(1.04)}
+    .hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 78% 18%,rgba(112,190,202,.48),transparent 34%),radial-gradient(ellipse at 8% 92%,rgba(53,132,90,.36),transparent 36%),linear-gradient(125deg,#0b2746 0%,#174d70 55%,#236b70 100%);color:white}.hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.65) 1px,transparent 1px);background-size:27px 27px}.hero-top{max-width:1160px;margin:auto;padding:26px 22px 0;display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}.hero-logo{width:112px;height:112px;object-fit:contain;background:rgba(255,255,255,.96);padding:8px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.2)}.hero-child{width:180px;height:180px;object-fit:cover;object-position:center 25%;border:5px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 16px 36px rgba(0,0,0,.28)}
     .hero:after{content:"";position:absolute;z-index:-1;width:440px;height:440px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-110px;bottom:-260px;box-shadow:0 0 0 45px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}
     .hero-inner{max-width:1160px;margin:auto;padding:100px 22px 108px}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.08);padding:7px 14px;border-radius:30px;font-size:.76rem;letter-spacing:.11em;text-transform:uppercase}
@@ -73,7 +73,7 @@
     .footer-mark{display:flex;align-items:center;gap:12px}
     .footer-seal{width:38px;height:38px;border:1px solid rgba(255,255,255,.35);border-radius:11px;display:grid;place-items:center;font-weight:900}
     @media(max-width:900px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:600px){.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:72px 21px 78px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:600px){.hero-top{padding:18px 19px 0}.hero-logo{width:76px;height:76px;border-radius:16px}.hero-child{width:112px;height:112px;border-width:3px;border-radius:19px}.hero-inner{padding-top:44px}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:72px 21px 78px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -89,6 +89,7 @@
     </div>
   </header>
   <section class="hero" id="inicio">
+    <div class="hero-top"><img class="hero-logo" src="LOGO%20MINISTERIO%20DE%20EDUCACION.jfif" alt="Logo del Ministerio de Educación"><img class="hero-child" src="IMAGNE%20DE%20NI%C3%91A%20LA%20ESPERANZA.jfif" alt="Estudiante de la comunidad educativa"></div>
     <div class="hero-inner">
       <span class="eyebrow">Educación · Comunidad · Futuro</span>
       <h1>NER Nueva Alianza</h1>
