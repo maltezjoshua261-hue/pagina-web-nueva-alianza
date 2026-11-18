@@ -448,7 +448,7 @@
       async function editMaterial(item){
         const titulo=prompt("Título del material:",item.titulo);if(titulo===null)return;
         const descripcion=prompt("Descripción:",item.descripcion||"");if(descripcion===null)return;
-        const {error}=await biblioteca.from("biblioteca_materiales").update({titulo:titulo.trim(),descripcion:descripcion.trim(),categoria:document.getElementById("materialCategoria").value}).eq("id",item.id);
+        const {error}=await biblioteca.from("biblioteca_materiales").update({titulo:titulo.trim(),descripcion:descripcion.trim()}).eq("id",item.id);
         if(error){setStatus(uploadStatus,"No se pudo actualizar: "+error.message,true);return;}setStatus(uploadStatus,"Material actualizado.");refreshAdmin();loadPublicLibrary();
       }
       async function toggleMaterial(item){
