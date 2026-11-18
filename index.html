@@ -355,7 +355,7 @@
   </div></footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    (function(){
+    (async function(){
       const views = Array.from(document.querySelectorAll(".page-view"));
       const nav = document.querySelector("nav");
       const menu = document.querySelector(".menu");
@@ -409,21 +409,22 @@
         if(!biblioteca) return;
         const {data,error}=await biblioteca.from("biblioteca_materiales").select("id,titulo,descripcion,categoria,modalidad,nivel,nombre_archivo,ruta_archivo,creado_en").eq("publicado",true).order("creado_en",{ascending:false});
         if(error) return;
-        document.querySelectorAll(".library-material-list").forEach(container=>{
+        const containers=Array.from(document.querySelectorAll(".library-material-list"));
+        for(const container of containers){
           container.replaceChildren();
           const rows=(data||[]).filter(item=>item.categoria===container.dataset.libraryCategory);
-          if(!rows.length){const p=document.createElement("p");p.className="library-empty";p.textContent="Próximamente se publicarán materiales en esta colección.";container.append(p);return;}
-          rows.forEach(item=>{
+          if(!rows.length){const p=document.createElement("p");p.className="library-empty";p.textContent="Próximamente se publicarán materiales en esta colección.";container.append(p);continue;}
+          for(const item of rows){
+            const {data:signedData,error:signedError}=await biblioteca.storage.from("biblioteca-educativa").createSignedUrl(item.ruta_archivo,3600);
+            if(signedError) continue;
             const article=document.createElement("article");article.className="library-material";
             const h=document.createElement("h3");h.textContent=item.titulo;
             const d=document.createElement("p");d.textContent=item.descripcion||"Material educativo del NER Nueva Alianza.";
             const meta=document.createElement("p");meta.className="library-meta";meta.textContent=[item.modalidad,item.nivel].filter(Boolean).join(" · ");
-            const {data:signedData,error:signedError}=await biblioteca.storage.from("biblioteca-educativa").createSignedUrl(item.ruta_archivo,3600);
-            if(signedError) return;
-            const a=document.createElement("a");a.href=signedData.signedUrl;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Abrir o descargar PDF ↗";
-            article.append(h,d,meta,a);container.append(article);
-          });
-        });
+            const link=document.createElement("a");link.href=signedData.signedUrl;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Abrir o descargar PDF ↗";
+            article.append(h,d,meta,link);container.append(article);
+          }
+        }
       }
       function renderAdminMaterials(items){
         const host=document.getElementById("bibliotecaAdminList");if(!host)return;host.replaceChildren();
