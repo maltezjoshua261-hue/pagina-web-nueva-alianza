@@ -245,7 +245,7 @@
     <section class="page-view" id="inclusion-experiencias"><div class="container"><a class="training-back" href="#inclusion">← Volver a Educación inclusiva</a><span class="section-kicker">Educación inclusiva</span><h2>Experiencias inclusivas</h2><p class="intro">Espacio para visibilizar iniciativas y buenas prácticas que promuevan la participación y el aprendizaje en nuestros centros.</p><div class="training-panel"><h3>Buenas prácticas de nuestros centros</h3><p>Se podrán compartir relatos, fotografías, proyectos y actividades que reflejen experiencias inclusivas de la comunidad educativa.</p><p>Las publicaciones se incorporarán con autorización y cuidando la privacidad de niñas, niños y adolescentes.</p></div></div></section>
     <section class="page-view" id="biblioteca"><div class="container">
       <span class="section-kicker">Conocimiento y recursos para enseñar</span><h2>Biblioteca Digital Educativa</h2>
-      <p class="intro">Un espacio para organizar, consultar y compartir materiales pedagógicos y documentos de apoyo para los docentes, estudiantes y familias del NER Nueva Alianza.</p><p><a class="btn btn-green" href="#biblioteca-admin">🔐 Acceso de dirección · Administrar materiales</a></p>
+      <p class="intro">Un espacio para organizar, consultar y compartir materiales pedagógicos y documentos de apoyo para los docentes, estudiantes y familias del NER Nueva Alianza.</p>
       <div class="library-search"><label for="librarySearch">Buscar en la biblioteca</label><input id="librarySearch" type="search" placeholder="Escribe un tema, nivel o material..." autocomplete="off"><p id="librarySearchStatus" aria-live="polite">Explora las colecciones por tema o utiliza el buscador.</p></div>
       <div class="training-grid" id="libraryCategories">
         <article class="training-card library-category" data-search="programas documentos MINED mallas curriculares orientaciones oficiales"><div class="training-icon">📘</div><h3>Programas y documentos MINED</h3><p>Programas de estudio, mallas curriculares y orientaciones educativas.</p><a href="#biblioteca-mined">Abrir colección →</a></article>
@@ -265,49 +265,7 @@
     <section class="page-view" id="biblioteca-secundaria"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Secundaria</h2><p class="intro">Recursos de consulta y apoyo para las asignaturas y grados de Secundaria a Distancia en el Campo.</p><div class="training-panel"><h3>Recursos por asignatura</h3><p>Se podrán publicar guías de estudio, lecturas, ejercicios, actividades y documentos de apoyo para los estudiantes.</p><p>Los materiales se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="secundaria"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
     <section class="page-view" id="biblioteca-evaluacion"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Evaluación de los aprendizajes</h2><p class="intro">Instrumentos para acompañar, valorar y dar seguimiento a los aprendizajes de los estudiantes.</p><div class="training-panel"><h3>Instrumentos de evaluación</h3><p>Se podrán incorporar pruebas, rúbricas, listas de cotejo, escalas de valoración y otros instrumentos pertinentes a cada nivel y modalidad.</p><p>Los documentos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="evaluacion"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
     <section class="page-view" id="biblioteca-administrativos"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Documentos administrativos</h2><p class="intro">Formatos y documentos de apoyo para organizar los procesos de gestión de los centros educativos.</p><div class="training-panel"><h3>Formatos institucionales</h3><p>Se podrán agregar modelos de registros, formatos de trabajo, plantillas y documentos administrativos de uso autorizado.</p><p>Antes de publicar, se revisará que los archivos no contengan datos personales o información confidencial de estudiantes y familias.</p></div><div class="library-material-list" data-library-category="administrativos"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
-    <section class="page-view" id="biblioteca-admin"><div class="container">
-      <a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a>
-      <span class="section-kicker">Área privada de gestión</span><h2>Administración de la Biblioteca</h2>
-      <p class="intro">Acceso reservado a la dirección del NER Nueva Alianza para cargar, organizar, editar y publicar documentos educativos.</p>
-      <div class="admin-panel">
-        <div id="bibliotecaAuth">
-          <h3>Ingreso de dirección</h3>
-          <p>Utiliza el correo institucional autorizado y tu contraseña. No compartas tu contraseña con otras personas.</p>
-          <form id="bibliotecaLogin" class="admin-form">
-            <label for="bibliotecaEmail">Correo electrónico</label>
-            <input id="bibliotecaEmail" type="email" value="maltezjoshua261@gmail.com" autocomplete="username" required>
-            <label for="bibliotecaPassword">Contraseña</label>
-            <input id="bibliotecaPassword" type="password" autocomplete="current-password" minlength="8" required>
-            <div class="admin-actions"><button class="btn btn-green" type="submit">Iniciar sesión</button><button class="btn btn-light" type="button" id="bibliotecaSignup">Crear / configurar acceso</button></div>
-          </form>
-          <p id="bibliotecaAuthStatus" class="admin-status" role="status">Correo autorizado: maltezjoshua261@gmail.com. Si la cuenta ya existe, solicita un enlace para configurar la contraseña.</p>
-          <form id="bibliotecaRecoveryForm" class="admin-form" hidden>
-            <h4>Configurar contraseña de dirección</h4>
-            <label for="bibliotecaNewPassword">Nueva contraseña (mínimo 8 caracteres)</label>
-            <input id="bibliotecaNewPassword" type="password" minlength="8" autocomplete="new-password" required>
-            <button class="btn btn-green" type="submit">Guardar contraseña</button>
-          </form>
-        </div>
-        <div id="bibliotecaDashboard" hidden>
-          <div class="admin-heading"><div><h3>Panel de administración</h3><p id="bibliotecaSignedEmail"></p></div><button class="btn btn-light" type="button" id="bibliotecaLogout">Cerrar sesión</button></div>
-          <form id="bibliotecaUploadForm" class="admin-form">
-            <h4>Agregar material educativo</h4>
-            <label for="materialTitulo">Título del material</label><input id="materialTitulo" maxlength="180" required>
-            <label for="materialDescripcion">Descripción breve</label><textarea id="materialDescripcion" rows="3" maxlength="700"></textarea>
-            <div class="admin-two">
-              <div><label for="materialCategoria">Colección</label><select id="materialCategoria" required><option value="mined">Programas y documentos MINED</option><option value="planificaciones">Planificaciones didácticas</option><option value="inicial">Educación Inicial</option><option value="primaria">Primaria Multigrado</option><option value="secundaria">Secundaria</option><option value="evaluacion">Evaluación de los aprendizajes</option><option value="administrativos">Documentos administrativos</option></select></div>
-              <div><label for="materialModalidad">Modalidad</label><select id="materialModalidad"><option>General</option><option>Educación Inicial</option><option>Primaria Multigrado</option><option>Primaria Comunitaria EDJA</option><option>Alfabetización</option><option>Secundaria a Distancia en el Campo</option></select></div>
-            </div>
-            <label for="materialNivel">Nivel o grado (opcional)</label><input id="materialNivel" maxlength="100" placeholder="Ej. 1.º y 2.º grado, III Nivel">
-            <label for="materialArchivo">Archivo PDF (máximo 20 MB)</label><input id="materialArchivo" type="file" accept="application/pdf,.pdf" required>
-            <label class="admin-check"><input id="materialPublicado" type="checkbox"> Publicar inmediatamente en la biblioteca</label>
-            <button class="btn btn-green" type="submit">Subir material</button>
-            <p id="bibliotecaUploadStatus" class="admin-status" role="status"></p>
-          </form>
-          <div class="admin-library"><h4>Materiales registrados</h4><div id="bibliotecaAdminList"><p>Cargando materiales...</p></div></div>
-        </div>
-      </div>
-    </div></section>
+
     <section class="gallery page-view" id="galeria"><div class="container">
       <span class="section-kicker">Nuestros recuerdos</span><h2>Galería fotográfica</h2>
       <div class="gallery-grid"><figure class="gallery-card"><img src="Imagen%20de%20la%20primera%20escuela.webp" alt="Imagen histórica de la primera escuela comunitaria de Nueva Alianza" loading="lazy"><figcaption><h3>La primera escuela comunitaria</h3><p>Un recuerdo de los primeros espacios que dieron inicio a la historia educativa de Nueva Alianza.</p></figcaption></figure><figure class="gallery-card"><img src="NUEVA%20ALIANZA.jfif" alt="Recuerdo histórico de la comunidad educativa Nueva Alianza" loading="lazy"><figcaption><h3>Un recuerdo de Nueva Alianza</h3><p>Fotografía que forma parte de la memoria de nuestra comunidad educativa.</p></figcaption></figure><figure class="gallery-card"><img src="Primeras%20palillonas%20a%C3%B1o%201995.webp" alt="Primeras palillonas de Nueva Alianza en 1995" loading="lazy"><figcaption><h3>Primeras palillonas · 1995</h3><p>Una memoria de las actividades culturales y estudiantiles de nuestra escuela.</p></figcaption></figure></div>
@@ -402,16 +360,7 @@
 
       const BIBLIOTECA_URL = "https://qgorjwwhludvzwvrgecz.supabase.co";
       const BIBLIOTECA_KEY = "sb_publishable_pcK1oUF6hSjngE2zHePKuQ_H81RtQHL";
-      const BIBLIOTECA_ADMIN = "maltezjoshua261@gmail.com";
       const biblioteca = window.supabase ? window.supabase.createClient(BIBLIOTECA_URL, BIBLIOTECA_KEY) : null;
-      const authBox = document.getElementById("bibliotecaAuth");
-      const dashboard = document.getElementById("bibliotecaDashboard");
-      const authStatus = document.getElementById("bibliotecaAuthStatus");
-      const uploadStatus = document.getElementById("bibliotecaUploadStatus");
-      let passwordRecoveryMode = false;
-      const categoryNames = {mined:"Programas y documentos MINED",planificaciones:"Planificaciones didácticas",inicial:"Educación Inicial",primaria:"Primaria Multigrado",secundaria:"Secundaria",evaluacion:"Evaluación de los aprendizajes",administrativos:"Documentos administrativos"};
-      function safeText(value){return String(value == null ? "" : value);}
-      function setStatus(el,message,isError){if(el){el.textContent=message;el.style.color=isError?"#a12b2b":"#276744";}}
       async function loadPublicLibrary(){
         if(!biblioteca) return;
         const {data,error}=await biblioteca.from("biblioteca_materiales").select("id,titulo,descripcion,categoria,modalidad,nivel,nombre_archivo,ruta_archivo,creado_en").eq("publicado",true).order("creado_en",{ascending:false});
@@ -433,126 +382,7 @@
           }
         }
       }
-      function renderAdminMaterials(items){
-        const host=document.getElementById("bibliotecaAdminList");if(!host)return;host.replaceChildren();
-        if(!items||!items.length){const p=document.createElement("p");p.textContent="Todavía no hay materiales registrados.";host.append(p);return;}
-        items.forEach(item=>{
-          const row=document.createElement("div");row.className="admin-material";
-          const info=document.createElement("div");const h=document.createElement("h5");h.textContent=item.titulo;
-          const p=document.createElement("p");p.textContent=(categoryNames[item.categoria]||item.categoria)+" · "+(item.modalidad||"General")+" · "+(item.nivel||"Todos");
-          const state=document.createElement("p");state.textContent=item.publicado?"Publicado en la biblioteca":"Guardado como borrador";
-          info.append(h,p,state);
-          const actions=document.createElement("div");actions.className="admin-material-actions";
-          const edit=document.createElement("button");edit.type="button";edit.textContent="Editar";edit.addEventListener("click",()=>editMaterial(item));
-          const toggle=document.createElement("button");toggle.type="button";toggle.textContent=item.publicado?"Retirar":"Publicar";toggle.addEventListener("click",()=>toggleMaterial(item));
-          const del=document.createElement("button");del.type="button";del.textContent="Eliminar";del.addEventListener("click",()=>deleteMaterial(item));
-          actions.append(edit,toggle,del);row.append(info,actions);host.append(row);
-        });
-      }
-      async function refreshAdmin(){
-        if(!biblioteca)return;
-        const {data,error}=await biblioteca.from("biblioteca_materiales").select("*").order("creado_en",{ascending:false});
-        if(error){setStatus(uploadStatus,"No se pudo cargar la lista: "+error.message,true);return;}
-        renderAdminMaterials(data||[]);
-      }
-      async function editMaterial(item){
-        const titulo=prompt("Título del material:",item.titulo);if(titulo===null)return;
-        const descripcion=prompt("Descripción:",item.descripcion||"");if(descripcion===null)return;
-        const {error}=await biblioteca.from("biblioteca_materiales").update({titulo:titulo.trim(),descripcion:descripcion.trim()}).eq("id",item.id);
-        if(error){setStatus(uploadStatus,"No se pudo actualizar: "+error.message,true);return;}setStatus(uploadStatus,"Material actualizado.");refreshAdmin();loadPublicLibrary();
-      }
-      async function toggleMaterial(item){
-        const {error}=await biblioteca.from("biblioteca_materiales").update({publicado:!item.publicado}).eq("id",item.id);
-        if(error){setStatus(uploadStatus,"No se pudo cambiar el estado: "+error.message,true);return;}setStatus(uploadStatus,item.publicado?"Material retirado de la biblioteca.":"Material publicado correctamente.");refreshAdmin();loadPublicLibrary();
-      }
-      async function deleteMaterial(item){
-        if(!confirm("¿Eliminar definitivamente este material y su archivo PDF?"))return;
-        const {error:storageError}=await biblioteca.storage.from("biblioteca-educativa").remove([item.ruta_archivo]);
-        if(storageError){setStatus(uploadStatus,"No se pudo eliminar el archivo: "+storageError.message,true);return;}
-        const {error}=await biblioteca.from("biblioteca_materiales").delete().eq("id",item.id);
-        if(error){setStatus(uploadStatus,"El archivo se quitó, pero no se pudo borrar el registro: "+error.message,true);return;}
-        setStatus(uploadStatus,"Material eliminado.");refreshAdmin();loadPublicLibrary();
-      }
-      async function updateAdminUI(session){
-        const user=session&&session.user;
-        const allowed=!!(user&&user.email&&user.email.toLowerCase()===BIBLIOTECA_ADMIN);
-        if(authBox)authBox.hidden=allowed&&!passwordRecoveryMode;
-        if(dashboard)dashboard.hidden=!allowed||passwordRecoveryMode;
-        if(user&&!allowed){await biblioteca.auth.signOut();setStatus(authStatus,"Esta cuenta no está autorizada para administrar la biblioteca.",true);}
-        if(allowed){document.getElementById("bibliotecaSignedEmail").textContent=user.email;await refreshAdmin();}
-      }
-      if(biblioteca){
-        loadPublicLibrary();
-        const recoveryForm=document.getElementById("bibliotecaRecoveryForm");
-        biblioteca.auth.getSession().then(({data})=>updateAdminUI(data.session));
-        biblioteca.auth.onAuthStateChange((event,session)=>{
-          if(event==="PASSWORD_RECOVERY"&&recoveryForm){passwordRecoveryMode=true;recoveryForm.hidden=false;setStatus(authStatus,"Enlace válido. Ahora establece una contraseña nueva.");}
-          updateAdminUI(session);
-        });
-        if(recoveryForm)recoveryForm.addEventListener("submit",async event=>{
-          event.preventDefault();
-          const password=document.getElementById("bibliotecaNewPassword").value;
-          if(password.length<8){setStatus(authStatus,"La contraseña debe tener al menos 8 caracteres.",true);return;}
-          setStatus(authStatus,"Verificando el enlace seguro...");
-          let {data:{session},error:sessionError}=await biblioteca.auth.getSession();
-          if(!session){
-            const hash=new URLSearchParams(window.location.hash.replace(/^#/,""));
-            const access_token=hash.get("access_token");
-            const refresh_token=hash.get("refresh_token");
-            if(access_token&&refresh_token){
-              const restored=await biblioteca.auth.setSession({access_token,refresh_token});
-              session=restored.data&&restored.data.session;
-              sessionError=restored.error;
-            }
-          }
-          if(!session){
-            setStatus(authStatus,"El enlace de recuperación ya no tiene una sesión válida. Solicita un enlace nuevo con «Crear / configurar acceso» y ábrelo directamente desde tu correo.",true);
-            return;
-          }
-          setStatus(authStatus,"Guardando nueva contraseña...");
-          const {error}=await biblioteca.auth.updateUser({password});
-          if(error){setStatus(authStatus,"No se pudo guardar la contraseña: "+error.message,true);return;}
-          recoveryForm.hidden=true;
-          passwordRecoveryMode=false;
-          const current=await biblioteca.auth.getSession();
-          await updateAdminUI(current.data.session);
-          setStatus(authStatus,"Contraseña configurada correctamente. Ya puedes ingresar con tu correo y la nueva contraseña.");
-        });
-        document.getElementById("bibliotecaLogin").addEventListener("submit",async event=>{
-          event.preventDefault();const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();const password=document.getElementById("bibliotecaPassword").value;
-          if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"El correo no está autorizado para este panel.",true);return;}
-          setStatus(authStatus,"Verificando acceso...");
-          const {error}=await biblioteca.auth.signInWithPassword({email,password});
-          if(error)setStatus(authStatus,"No se pudo iniciar sesión: "+error.message,true);
-        });
-        document.getElementById("bibliotecaSignup").addEventListener("click",async()=>{
-          const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();
-          if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"Usa el correo autorizado de dirección.",true);return;}
-          setStatus(authStatus,"Solicitando enlace seguro para configurar el acceso...");
-          const redirectTo=window.location.origin+window.location.pathname+"#biblioteca-admin";
-          const {error}=await biblioteca.auth.resetPasswordForEmail(email,{redirectTo});
-          if(error)setStatus(authStatus,"No se pudo solicitar el enlace: "+error.message,true);
-          else setStatus(authStatus,"Solicitud procesada. Si el servicio de correo está habilitado, recibirás un enlace para configurar tu contraseña. Revisa también spam y correo no deseado.");
-        });
-        document.getElementById("bibliotecaLogout").addEventListener("click",()=>biblioteca.auth.signOut());
-        document.getElementById("bibliotecaUploadForm").addEventListener("submit",async event=>{
-          event.preventDefault();const file=document.getElementById("materialArchivo").files[0];
-          if(!file){setStatus(uploadStatus,"Selecciona un archivo PDF.",true);return;}
-          if(file.type!=="application/pdf"&& !file.name.toLowerCase().endsWith(".pdf")){setStatus(uploadStatus,"Solo se permiten archivos PDF.",true);return;}
-          if(file.size>20*1024*1024){setStatus(uploadStatus,"El archivo supera el límite de 20 MB.",true);return;}
-          const {data:{user}}=await biblioteca.auth.getUser();if(!user||user.email.toLowerCase()!==BIBLIOTECA_ADMIN){setStatus(uploadStatus,"La sesión no está autorizada.",true);return;}
-          const category=document.getElementById("materialCategoria").value;
-          const path=category+"/"+Date.now()+"-"+file.name.normalize("NFKD").replace(/[^a-zA-Z0-9._-]/g,"-");
-          setStatus(uploadStatus,"Subiendo documento...");
-          const {error:upError}=await biblioteca.storage.from("biblioteca-educativa").upload(path,file,{contentType:"application/pdf",upsert:false});
-          if(upError){setStatus(uploadStatus,"No se pudo subir el PDF: "+upError.message,true);return;}
-          const record={titulo:document.getElementById("materialTitulo").value.trim(),descripcion:document.getElementById("materialDescripcion").value.trim(),categoria,modalidad:document.getElementById("materialModalidad").value,nivel:document.getElementById("materialNivel").value.trim()||"Todos",nombre_archivo:file.name,ruta_archivo:path,tipo_mime:"application/pdf",tamano_bytes:file.size,publicado:document.getElementById("materialPublicado").checked,creado_por:user.id};
-          const {error}=await biblioteca.from("biblioteca_materiales").insert(record);
-          if(error){await biblioteca.storage.from("biblioteca-educativa").remove([path]);setStatus(uploadStatus,"El archivo se subió, pero no se pudo registrar: "+error.message,true);return;}
-          event.target.reset();setStatus(uploadStatus,"Documento agregado correctamente.");await refreshAdmin();await loadPublicLibrary();
-        });
-      }else{setStatus(authStatus,"No se pudo cargar el servicio de acceso. Recarga la página.",true);}
-
+      if(biblioteca){loadPublicLibrary();}
       window.addEventListener("hashchange", showView);
       showView();
     })();
