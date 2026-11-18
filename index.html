@@ -102,7 +102,10 @@
     .cover-contact a{color:#bce8c6;text-decoration:underline;text-underline-offset:3px;font-weight:700}
     .cover-contact .cover-hours{color:#fff;font-weight:700}
     @media(max-width:700px){.hero{min-height:790px}.hero-inner{padding:105px 22px 310px}.cover-contact{right:16px;bottom:16px;width:calc(100% - 32px);padding:15px 16px}.cover-contact p{font-size:.84rem}}
-  </style>
+  
+    .admin-panel{max-width:900px;padding:26px;background:#f1f6f8;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 25px rgba(16,47,80,.06)}.admin-panel h3,.admin-panel h4{color:var(--navy);margin:0 0 10px}.admin-panel p{color:var(--muted)}.admin-form{display:grid;gap:10px;margin-top:18px}.admin-form label{font-weight:700;color:var(--navy);font-size:.9rem}.admin-form input:not([type=checkbox]),.admin-form textarea,.admin-form select{width:100%;padding:12px 13px;border:1px solid #bdcbd4;border-radius:9px;font:inherit;background:#fff;color:var(--ink)}.admin-actions,.admin-heading{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.admin-heading{justify-content:space-between}.admin-heading p{margin:0}.admin-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.admin-check{display:flex;align-items:center;gap:9px}.admin-status{min-height:1.3em;font-size:.9rem}.admin-material{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:15px 0;border-top:1px solid var(--line)}.admin-material h5{margin:0 0 5px;color:var(--navy);font-size:1rem}.admin-material p{margin:3px 0;font-size:.86rem}.admin-material-actions{display:flex;gap:7px;flex-wrap:wrap}.admin-material-actions button{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer}.library-material-list{display:grid;gap:12px;margin-top:22px}.library-material{padding:17px 19px;border:1px solid var(--line);border-radius:13px;background:#fff}.library-material h3{margin:0 0 7px;color:var(--navy);font-size:1rem}.library-material p{margin:4px 0;color:var(--muted);font-size:.9rem}.library-material a{display:inline-block;margin-top:8px;color:var(--green);font-weight:800}.library-empty{color:var(--muted);font-size:.9rem}.library-meta{font-size:.78rem!important;color:#728496!important}
+    @media(max-width:600px){.admin-panel{padding:18px}.admin-two{grid-template-columns:1fr}.admin-material{flex-direction:column}.admin-heading{align-items:flex-start}}
+</style>
 </head>
 <body>
   <div class="topbar"><span>El Bote · El Cuá · Jinotega · Nicaragua</span><span>Portal institucional de la comunidad educativa</span></div>
@@ -111,7 +114,7 @@
       <a class="brand" href="#inicio" aria-label="Inicio NER Nueva Alianza"><div class="seal">NER</div><div><strong>NUEVA ALIANZA</strong><small>Red Educativa</small></div></a>
       <button class="menu" aria-label="Abrir menú" aria-expanded="false" onclick="const n=document.querySelector('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
       <nav aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#historia">Nuestra historia</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#formacion">Formación docente</a><a href="#modalidades">Modalidades</a><a href="#inclusion">Educación inclusiva</a><a href="#biblioteca">Biblioteca digital</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#historia">Nuestra historia</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#formacion">Formación docente</a><a href="#modalidades">Modalidades</a><a href="#inclusion">Educación inclusiva</a><a href="#biblioteca">Biblioteca digital</a><a href="#biblioteca-admin">Administrar biblioteca</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -242,7 +245,7 @@
     <section class="page-view" id="inclusion-experiencias"><div class="container"><a class="training-back" href="#inclusion">← Volver a Educación inclusiva</a><span class="section-kicker">Educación inclusiva</span><h2>Experiencias inclusivas</h2><p class="intro">Espacio para visibilizar iniciativas y buenas prácticas que promuevan la participación y el aprendizaje en nuestros centros.</p><div class="training-panel"><h3>Buenas prácticas de nuestros centros</h3><p>Se podrán compartir relatos, fotografías, proyectos y actividades que reflejen experiencias inclusivas de la comunidad educativa.</p><p>Las publicaciones se incorporarán con autorización y cuidando la privacidad de niñas, niños y adolescentes.</p></div></div></section>
     <section class="page-view" id="biblioteca"><div class="container">
       <span class="section-kicker">Conocimiento y recursos para enseñar</span><h2>Biblioteca Digital Educativa</h2>
-      <p class="intro">Un espacio para organizar, consultar y compartir materiales pedagógicos y documentos de apoyo para los docentes, estudiantes y familias del NER Nueva Alianza.</p>
+      <p class="intro">Un espacio para organizar, consultar y compartir materiales pedagógicos y documentos de apoyo para los docentes, estudiantes y familias del NER Nueva Alianza.</p><p><a class="btn btn-green" href="#biblioteca-admin">🔐 Acceso de dirección · Administrar materiales</a></p>
       <div class="library-search"><label for="librarySearch">Buscar en la biblioteca</label><input id="librarySearch" type="search" placeholder="Escribe un tema, nivel o material..." autocomplete="off"><p id="librarySearchStatus" aria-live="polite">Explora las colecciones por tema o utiliza el buscador.</p></div>
       <div class="training-grid" id="libraryCategories">
         <article class="training-card library-category" data-search="programas documentos MINED mallas curriculares orientaciones oficiales"><div class="training-icon">📘</div><h3>Programas y documentos MINED</h3><p>Programas de estudio, mallas curriculares y orientaciones educativas.</p><a href="#biblioteca-mined">Abrir colección →</a></article>
@@ -255,13 +258,50 @@
       </div>
       <div class="library-note"><strong>Biblioteca en construcción:</strong> las colecciones ya están organizadas. Los archivos descargables se irán incorporando y clasificando conforme sean compartidos y revisados por la dirección.</div>
     </div></section>
-    <section class="page-view" id="biblioteca-mined"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Programas y documentos MINED</h2><p class="intro">Colección para consultar programas de estudio, mallas curriculares y orientaciones educativas oficiales.</p><div class="training-panel"><h3>Documentos disponibles</h3><p>Este espacio está preparado para incorporar documentos PDF y otros materiales de consulta.</p><p>Los archivos se publicarán cuando sean compartidos y revisados para mantener su identificación y procedencia.</p></div></div></section>
-    <section class="page-view" id="biblioteca-planificaciones"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Planificaciones didácticas</h2><p class="intro">Material de apoyo para organizar la enseñanza y las actividades de aprendizaje.</p><div class="training-panel"><h3>Planes y secuencias</h3><p>Aquí se podrán publicar planes diarios, mensuales, por unidad, secuencias didácticas y propuestas para aulas multigrado.</p><p>Los documentos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div></div></section>
-    <section class="page-view" id="biblioteca-inicial"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Educación Inicial</h2><p class="intro">Recursos lúdicos y didácticos para acompañar el desarrollo y los primeros aprendizajes.</p><div class="training-panel"><h3>Recursos para los niveles I, II y III</h3><p>Se podrán agregar fichas, cuentos, juegos, canciones, láminas, actividades y materiales para trabajar con niñas y niños.</p><p>Los recursos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div></div></section>
-    <section class="page-view" id="biblioteca-primaria"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Primaria Multigrado</h2><p class="intro">Colección de materiales para apoyar la atención de los grados y grupos multigrado.</p><div class="training-panel"><h3>Recursos por área y grado</h3><p>Se podrán organizar guías, lecturas, ejercicios, actividades y materiales de Lengua y Literatura, Matemática, Ciencias Sociales y Ciencias Naturales.</p><p>Los materiales se incorporarán conforme sean compartidos y revisados por la dirección.</p></div></div></section>
-    <section class="page-view" id="biblioteca-secundaria"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Secundaria</h2><p class="intro">Recursos de consulta y apoyo para las asignaturas y grados de Secundaria a Distancia en el Campo.</p><div class="training-panel"><h3>Recursos por asignatura</h3><p>Se podrán publicar guías de estudio, lecturas, ejercicios, actividades y documentos de apoyo para los estudiantes.</p><p>Los materiales se incorporarán conforme sean compartidos y revisados por la dirección.</p></div></div></section>
-    <section class="page-view" id="biblioteca-evaluacion"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Evaluación de los aprendizajes</h2><p class="intro">Instrumentos para acompañar, valorar y dar seguimiento a los aprendizajes de los estudiantes.</p><div class="training-panel"><h3>Instrumentos de evaluación</h3><p>Se podrán incorporar pruebas, rúbricas, listas de cotejo, escalas de valoración y otros instrumentos pertinentes a cada nivel y modalidad.</p><p>Los documentos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div></div></section>
-    <section class="page-view" id="biblioteca-administrativos"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Documentos administrativos</h2><p class="intro">Formatos y documentos de apoyo para organizar los procesos de gestión de los centros educativos.</p><div class="training-panel"><h3>Formatos institucionales</h3><p>Se podrán agregar modelos de registros, formatos de trabajo, plantillas y documentos administrativos de uso autorizado.</p><p>Antes de publicar, se revisará que los archivos no contengan datos personales o información confidencial de estudiantes y familias.</p></div></div></section>
+    <section class="page-view" id="biblioteca-mined"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Programas y documentos MINED</h2><p class="intro">Colección para consultar programas de estudio, mallas curriculares y orientaciones educativas oficiales.</p><div class="training-panel"><h3>Documentos disponibles</h3><p>Este espacio está preparado para incorporar documentos PDF y otros materiales de consulta.</p><p>Los archivos se publicarán cuando sean compartidos y revisados para mantener su identificación y procedencia.</p></div><div class="library-material-list" data-library-category="mined"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-planificaciones"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Planificaciones didácticas</h2><p class="intro">Material de apoyo para organizar la enseñanza y las actividades de aprendizaje.</p><div class="training-panel"><h3>Planes y secuencias</h3><p>Aquí se podrán publicar planes diarios, mensuales, por unidad, secuencias didácticas y propuestas para aulas multigrado.</p><p>Los documentos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="planificaciones"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-inicial"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Educación Inicial</h2><p class="intro">Recursos lúdicos y didácticos para acompañar el desarrollo y los primeros aprendizajes.</p><div class="training-panel"><h3>Recursos para los niveles I, II y III</h3><p>Se podrán agregar fichas, cuentos, juegos, canciones, láminas, actividades y materiales para trabajar con niñas y niños.</p><p>Los recursos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="inicial"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-primaria"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Primaria Multigrado</h2><p class="intro">Colección de materiales para apoyar la atención de los grados y grupos multigrado.</p><div class="training-panel"><h3>Recursos por área y grado</h3><p>Se podrán organizar guías, lecturas, ejercicios, actividades y materiales de Lengua y Literatura, Matemática, Ciencias Sociales y Ciencias Naturales.</p><p>Los materiales se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="primaria"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-secundaria"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Material para Secundaria</h2><p class="intro">Recursos de consulta y apoyo para las asignaturas y grados de Secundaria a Distancia en el Campo.</p><div class="training-panel"><h3>Recursos por asignatura</h3><p>Se podrán publicar guías de estudio, lecturas, ejercicios, actividades y documentos de apoyo para los estudiantes.</p><p>Los materiales se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="secundaria"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-evaluacion"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Evaluación de los aprendizajes</h2><p class="intro">Instrumentos para acompañar, valorar y dar seguimiento a los aprendizajes de los estudiantes.</p><div class="training-panel"><h3>Instrumentos de evaluación</h3><p>Se podrán incorporar pruebas, rúbricas, listas de cotejo, escalas de valoración y otros instrumentos pertinentes a cada nivel y modalidad.</p><p>Los documentos se incorporarán conforme sean compartidos y revisados por la dirección.</p></div><div class="library-material-list" data-library-category="evaluacion"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-administrativos"><div class="container"><a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a><span class="section-kicker">Biblioteca Digital Educativa</span><h2>Documentos administrativos</h2><p class="intro">Formatos y documentos de apoyo para organizar los procesos de gestión de los centros educativos.</p><div class="training-panel"><h3>Formatos institucionales</h3><p>Se podrán agregar modelos de registros, formatos de trabajo, plantillas y documentos administrativos de uso autorizado.</p><p>Antes de publicar, se revisará que los archivos no contengan datos personales o información confidencial de estudiantes y familias.</p></div><div class="library-material-list" data-library-category="administrativos"><p class="library-empty">Los materiales publicados aparecerán aquí.</p></div></div></section>
+    <section class="page-view" id="biblioteca-admin"><div class="container">
+      <a class="training-back" href="#biblioteca">← Volver a Biblioteca Digital</a>
+      <span class="section-kicker">Área privada de gestión</span><h2>Administración de la Biblioteca</h2>
+      <p class="intro">Acceso reservado a la dirección del NER Nueva Alianza para cargar, organizar, editar y publicar documentos educativos.</p>
+      <div class="admin-panel">
+        <div id="bibliotecaAuth">
+          <h3>Ingreso de dirección</h3>
+          <p>Utiliza el correo institucional autorizado y tu contraseña. No compartas tu contraseña con otras personas.</p>
+          <form id="bibliotecaLogin" class="admin-form">
+            <label for="bibliotecaEmail">Correo electrónico</label>
+            <input id="bibliotecaEmail" type="email" value="malthezjoshua261@gmail.com" autocomplete="username" required>
+            <label for="bibliotecaPassword">Contraseña</label>
+            <input id="bibliotecaPassword" type="password" autocomplete="current-password" minlength="8" required>
+            <div class="admin-actions"><button class="btn btn-green" type="submit">Iniciar sesión</button><button class="btn btn-light" type="button" id="bibliotecaSignup">Crear acceso de dirección</button></div>
+          </form>
+          <p id="bibliotecaAuthStatus" class="admin-status" role="status">Solo el correo autorizado puede administrar los materiales.</p>
+        </div>
+        <div id="bibliotecaDashboard" hidden>
+          <div class="admin-heading"><div><h3>Panel de administración</h3><p id="bibliotecaSignedEmail"></p></div><button class="btn btn-light" type="button" id="bibliotecaLogout">Cerrar sesión</button></div>
+          <form id="bibliotecaUploadForm" class="admin-form">
+            <h4>Agregar material educativo</h4>
+            <label for="materialTitulo">Título del material</label><input id="materialTitulo" maxlength="180" required>
+            <label for="materialDescripcion">Descripción breve</label><textarea id="materialDescripcion" rows="3" maxlength="700"></textarea>
+            <div class="admin-two">
+              <div><label for="materialCategoria">Colección</label><select id="materialCategoria" required><option value="mined">Programas y documentos MINED</option><option value="planificaciones">Planificaciones didácticas</option><option value="inicial">Educación Inicial</option><option value="primaria">Primaria Multigrado</option><option value="secundaria">Secundaria</option><option value="evaluacion">Evaluación de los aprendizajes</option><option value="administrativos">Documentos administrativos</option></select></div>
+              <div><label for="materialModalidad">Modalidad</label><select id="materialModalidad"><option>General</option><option>Educación Inicial</option><option>Primaria Multigrado</option><option>Primaria Comunitaria EDJA</option><option>Alfabetización</option><option>Secundaria a Distancia en el Campo</option></select></div>
+            </div>
+            <label for="materialNivel">Nivel o grado (opcional)</label><input id="materialNivel" maxlength="100" placeholder="Ej. 1.º y 2.º grado, III Nivel">
+            <label for="materialArchivo">Archivo PDF (máximo 20 MB)</label><input id="materialArchivo" type="file" accept="application/pdf,.pdf" required>
+            <label class="admin-check"><input id="materialPublicado" type="checkbox"> Publicar inmediatamente en la biblioteca</label>
+            <button class="btn btn-green" type="submit">Subir material</button>
+            <p id="bibliotecaUploadStatus" class="admin-status" role="status"></p>
+          </form>
+          <div class="admin-library"><h4>Materiales registrados</h4><div id="bibliotecaAdminList"><p>Cargando materiales...</p></div></div>
+        </div>
+      </div>
+    </div></section>
     <section class="gallery page-view" id="galeria"><div class="container">
       <span class="section-kicker">Nuestros recuerdos</span><h2>Galería fotográfica</h2>
       <div class="gallery-grid"><figure class="gallery-card"><img src="Imagen%20de%20la%20primera%20escuela.webp" alt="Imagen histórica de la primera escuela comunitaria de Nueva Alianza" loading="lazy"><figcaption><h3>La primera escuela comunitaria</h3><p>Un recuerdo de los primeros espacios que dieron inicio a la historia educativa de Nueva Alianza.</p></figcaption></figure><figure class="gallery-card"><img src="NUEVA%20ALIANZA.jfif" alt="Recuerdo histórico de la comunidad educativa Nueva Alianza" loading="lazy"><figcaption><h3>Un recuerdo de Nueva Alianza</h3><p>Fotografía que forma parte de la memoria de nuestra comunidad educativa.</p></figcaption></figure><figure class="gallery-card"><img src="Primeras%20palillonas%20a%C3%B1o%201995.webp" alt="Primeras palillonas de Nueva Alianza en 1995" loading="lazy"><figcaption><h3>Primeras palillonas · 1995</h3><p>Una memoria de las actividades culturales y estudiantiles de nuestra escuela.</p></figcaption></figure></div>
@@ -313,6 +353,7 @@
     <div class="footer-mark"><div class="footer-seal">NER</div><div><strong>NER NUEVA ALIANZA</strong><br><small>Educando con Valores, Respeto y Ley</small></div></div>
     <small>Portal institucional · El Cuá, Jinotega, Nicaragua</small>
   </div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     (function(){
       const views = Array.from(document.querySelectorAll(".page-view"));
@@ -352,6 +393,122 @@
           if(libraryStatus) libraryStatus.textContent = term ? (visible ? visible + " colección(es) encontrada(s)." : "No encontramos colecciones con ese término. Prueba con otra palabra.") : "Explora las colecciones por tema o utiliza el buscador.";
         });
       }
+
+      const BIBLIOTECA_URL = "https://qgorjwwhludvzwvrgecz.supabase.co";
+      const BIBLIOTECA_KEY = "sb_publishable_pcK1oUF6hSjngE2zHePKuQ_H81RtQHL";
+      const BIBLIOTECA_ADMIN = "malthezjoshua261@gmail.com";
+      const biblioteca = window.supabase ? window.supabase.createClient(BIBLIOTECA_URL, BIBLIOTECA_KEY) : null;
+      const authBox = document.getElementById("bibliotecaAuth");
+      const dashboard = document.getElementById("bibliotecaDashboard");
+      const authStatus = document.getElementById("bibliotecaAuthStatus");
+      const uploadStatus = document.getElementById("bibliotecaUploadStatus");
+      const categoryNames = {mined:"Programas y documentos MINED",planificaciones:"Planificaciones didácticas",inicial:"Educación Inicial",primaria:"Primaria Multigrado",secundaria:"Secundaria",evaluacion:"Evaluación de los aprendizajes",administrativos:"Documentos administrativos"};
+      function safeText(value){return String(value == null ? "" : value);}
+      function setStatus(el,message,isError){if(el){el.textContent=message;el.style.color=isError?"#a12b2b":"#276744";}}
+      async function loadPublicLibrary(){
+        if(!biblioteca) return;
+        const {data,error}=await biblioteca.from("biblioteca_materiales").select("id,titulo,descripcion,categoria,modalidad,nivel,nombre_archivo,ruta_archivo,creado_en").eq("publicado",true).order("creado_en",{ascending:false});
+        if(error) return;
+        document.querySelectorAll(".library-material-list").forEach(container=>{
+          container.replaceChildren();
+          const rows=(data||[]).filter(item=>item.categoria===container.dataset.libraryCategory);
+          if(!rows.length){const p=document.createElement("p");p.className="library-empty";p.textContent="Próximamente se publicarán materiales en esta colección.";container.append(p);return;}
+          rows.forEach(item=>{
+            const article=document.createElement("article");article.className="library-material";
+            const h=document.createElement("h3");h.textContent=item.titulo;
+            const d=document.createElement("p");d.textContent=item.descripcion||"Material educativo del NER Nueva Alianza.";
+            const meta=document.createElement("p");meta.className="library-meta";meta.textContent=[item.modalidad,item.nivel].filter(Boolean).join(" · ");
+            const a=document.createElement("a");a.href=biblioteca.storage.from("biblioteca-educativa").getPublicUrl(item.ruta_archivo).data.publicUrl;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Abrir o descargar PDF ↗";
+            article.append(h,d,meta,a);container.append(article);
+          });
+        });
+      }
+      function renderAdminMaterials(items){
+        const host=document.getElementById("bibliotecaAdminList");if(!host)return;host.replaceChildren();
+        if(!items||!items.length){const p=document.createElement("p");p.textContent="Todavía no hay materiales registrados.";host.append(p);return;}
+        items.forEach(item=>{
+          const row=document.createElement("div");row.className="admin-material";
+          const info=document.createElement("div");const h=document.createElement("h5");h.textContent=item.titulo;
+          const p=document.createElement("p");p.textContent=(categoryNames[item.categoria]||item.categoria)+" · "+(item.modalidad||"General")+" · "+(item.nivel||"Todos");
+          const state=document.createElement("p");state.textContent=item.publicado?"Publicado en la biblioteca":"Guardado como borrador";
+          info.append(h,p,state);
+          const actions=document.createElement("div");actions.className="admin-material-actions";
+          const edit=document.createElement("button");edit.type="button";edit.textContent="Editar";edit.addEventListener("click",()=>editMaterial(item));
+          const toggle=document.createElement("button");toggle.type="button";toggle.textContent=item.publicado?"Retirar":"Publicar";toggle.addEventListener("click",()=>toggleMaterial(item));
+          const del=document.createElement("button");del.type="button";del.textContent="Eliminar";del.addEventListener("click",()=>deleteMaterial(item));
+          actions.append(edit,toggle,del);row.append(info,actions);host.append(row);
+        });
+      }
+      async function refreshAdmin(){
+        if(!biblioteca)return;
+        const {data,error}=await biblioteca.from("biblioteca_materiales").select("*").order("creado_en",{ascending:false});
+        if(error){setStatus(uploadStatus,"No se pudo cargar la lista: "+error.message,true);return;}
+        renderAdminMaterials(data||[]);
+      }
+      async function editMaterial(item){
+        const titulo=prompt("Título del material:",item.titulo);if(titulo===null)return;
+        const descripcion=prompt("Descripción:",item.descripcion||"");if(descripcion===null)return;
+        const {error}=await biblioteca.from("biblioteca_materiales").update({titulo:titulo.trim(),descripcion:descripcion.trim(),categoria:document.getElementById("materialCategoria").value}).eq("id",item.id);
+        if(error){setStatus(uploadStatus,"No se pudo actualizar: "+error.message,true);return;}setStatus(uploadStatus,"Material actualizado.");refreshAdmin();loadPublicLibrary();
+      }
+      async function toggleMaterial(item){
+        const {error}=await biblioteca.from("biblioteca_materiales").update({publicado:!item.publicado}).eq("id",item.id);
+        if(error){setStatus(uploadStatus,"No se pudo cambiar el estado: "+error.message,true);return;}setStatus(uploadStatus,item.publicado?"Material retirado de la biblioteca.":"Material publicado correctamente.");refreshAdmin();loadPublicLibrary();
+      }
+      async function deleteMaterial(item){
+        if(!confirm("¿Eliminar definitivamente este material y su archivo PDF?"))return;
+        const {error:storageError}=await biblioteca.storage.from("biblioteca-educativa").remove([item.ruta_archivo]);
+        if(storageError){setStatus(uploadStatus,"No se pudo eliminar el archivo: "+storageError.message,true);return;}
+        const {error}=await biblioteca.from("biblioteca_materiales").delete().eq("id",item.id);
+        if(error){setStatus(uploadStatus,"El archivo se quitó, pero no se pudo borrar el registro: "+error.message,true);return;}
+        setStatus(uploadStatus,"Material eliminado.");refreshAdmin();loadPublicLibrary();
+      }
+      async function updateAdminUI(session){
+        const user=session&&session.user;
+        const allowed=!!(user&&user.email&&user.email.toLowerCase()===BIBLIOTECA_ADMIN);
+        if(authBox)authBox.hidden=allowed;
+        if(dashboard)dashboard.hidden=!allowed;
+        if(user&&!allowed){await biblioteca.auth.signOut();setStatus(authStatus,"Esta cuenta no está autorizada para administrar la biblioteca.",true);}
+        if(allowed){document.getElementById("bibliotecaSignedEmail").textContent=user.email;await refreshAdmin();}
+      }
+      if(biblioteca){
+        loadPublicLibrary();
+        biblioteca.auth.getSession().then(({data})=>updateAdminUI(data.session));
+        biblioteca.auth.onAuthStateChange((_event,session)=>{updateAdminUI(session);});
+        document.getElementById("bibliotecaLogin").addEventListener("submit",async event=>{
+          event.preventDefault();const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();const password=document.getElementById("bibliotecaPassword").value;
+          if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"El correo no está autorizado para este panel.",true);return;}
+          setStatus(authStatus,"Verificando acceso...");
+          const {error}=await biblioteca.auth.signInWithPassword({email,password});
+          if(error)setStatus(authStatus,"No se pudo iniciar sesión: "+error.message,true);
+        });
+        document.getElementById("bibliotecaSignup").addEventListener("click",async()=>{
+          const email=document.getElementById("bibliotecaEmail").value.trim().toLowerCase();const password=document.getElementById("bibliotecaPassword").value;
+          if(email!==BIBLIOTECA_ADMIN){setStatus(authStatus,"Usa el correo autorizado de dirección.",true);return;}
+          if(password.length<8){setStatus(authStatus,"Crea una contraseña de al menos 8 caracteres en el campo Contraseña.",true);return;}
+          setStatus(authStatus,"Creando acceso. Si la confirmación por correo está activa, revisa tu bandeja de entrada.");
+          const {error}=await biblioteca.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin+window.location.pathname+"#biblioteca-admin"}});
+          if(error)setStatus(authStatus,"No se pudo crear el acceso: "+error.message,true);else setStatus(authStatus,"Solicitud de acceso enviada. Revisa tu correo para confirmar la cuenta.");
+        });
+        document.getElementById("bibliotecaLogout").addEventListener("click",()=>biblioteca.auth.signOut());
+        document.getElementById("bibliotecaUploadForm").addEventListener("submit",async event=>{
+          event.preventDefault();const file=document.getElementById("materialArchivo").files[0];
+          if(!file){setStatus(uploadStatus,"Selecciona un archivo PDF.",true);return;}
+          if(file.type!=="application/pdf"&& !file.name.toLowerCase().endsWith(".pdf")){setStatus(uploadStatus,"Solo se permiten archivos PDF.",true);return;}
+          if(file.size>20*1024*1024){setStatus(uploadStatus,"El archivo supera el límite de 20 MB.",true);return;}
+          const {data:{user}}=await biblioteca.auth.getUser();if(!user||user.email.toLowerCase()!==BIBLIOTECA_ADMIN){setStatus(uploadStatus,"La sesión no está autorizada.",true);return;}
+          const category=document.getElementById("materialCategoria").value;
+          const path=category+"/"+Date.now()+"-"+file.name.normalize("NFKD").replace(/[^a-zA-Z0-9._-]/g,"-");
+          setStatus(uploadStatus,"Subiendo documento...");
+          const {error:upError}=await biblioteca.storage.from("biblioteca-educativa").upload(path,file,{contentType:"application/pdf",upsert:false});
+          if(upError){setStatus(uploadStatus,"No se pudo subir el PDF: "+upError.message,true);return;}
+          const record={titulo:document.getElementById("materialTitulo").value.trim(),descripcion:document.getElementById("materialDescripcion").value.trim(),categoria,modalidad:document.getElementById("materialModalidad").value,nivel:document.getElementById("materialNivel").value.trim()||"Todos",nombre_archivo:file.name,ruta_archivo:path,tipo_mime:"application/pdf",tamano_bytes:file.size,publicado:document.getElementById("materialPublicado").checked,creado_por:user.id};
+          const {error}=await biblioteca.from("biblioteca_materiales").insert(record);
+          if(error){await biblioteca.storage.from("biblioteca-educativa").remove([path]);setStatus(uploadStatus,"El archivo se subió, pero no se pudo registrar: "+error.message,true);return;}
+          event.target.reset();setStatus(uploadStatus,"Documento agregado correctamente.");await refreshAdmin();await loadPublicLibrary();
+        });
+      }else{setStatus(authStatus,"No se pudo cargar el servicio de acceso. Recarga la página.",true);}
+
       window.addEventListener("hashchange", showView);
       showView();
     })();
