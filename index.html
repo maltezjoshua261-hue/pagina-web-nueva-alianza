@@ -42,7 +42,13 @@
     .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
     .about-panel{background:linear-gradient(135deg,#f1f6f8,#f7faf8);padding:26px 28px;border-radius:16px;border-left:4px solid var(--green)}
     .about-panel p{margin:0;color:#42576a}
-    .values{display:grid;grid-template-columns:1fr;gap:12px}
+    .about-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+    .about-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:23px;box-shadow:0 6px 18px rgba(16,47,80,.05)}
+    .about-card h3{display:flex;align-items:center;gap:10px;margin:0 0 9px;color:var(--navy);font-size:1.08rem}
+    .about-card h3 span{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#eaf3ed;color:var(--green);font-size:1.1rem}
+    .about-card p{margin:0;color:#596e7e;font-size:.92rem}
+    .about-subtitle{margin:35px 0 15px;color:var(--navy);font-size:1.25rem}
+    .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     .value{display:flex;align-items:center;gap:15px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 17px;font-weight:700;color:var(--navy);box-shadow:0 5px 16px rgba(16,47,80,.04)}
     .value span{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;background:#eaf3ed;border-radius:12px;font-size:1.25rem}
     .history{background:linear-gradient(180deg,#fff 0%,#f5f8f7 100%)}
@@ -126,13 +132,37 @@
   <main>
     <section class="page-view" id="nosotros"><div class="container">
       <div class="about-grid">
-        <div><span class="section-kicker">Nuestra identidad</span><h2>Educando con Valores, Respeto y Ley</h2>
-          <p class="intro">El NER Nueva Alianza reúne centros educativos que comparten el compromiso de acompañar el aprendizaje y el desarrollo integral de sus estudiantes.</p>
-          <div class="about-panel"><p>Este espacio institucional está destinado a compartir información, actividades, experiencias educativas y logros de nuestra comunidad. La historia, misión y visión oficiales podrán incorporarse cuando sean proporcionadas por la dirección.</p></div>
+        <div><span class="section-kicker">Nuestra identidad institucional</span><h2>¿Quiénes somos?</h2>
+          <p class="intro">El Núcleo Educativo Rural Nueva Alianza es una comunidad educativa integrada por ocho centros escolares del municipio de El Cuá, departamento de Jinotega. Trabajamos de manera articulada para garantizar oportunidades de aprendizaje, formación integral y desarrollo de niñas, niños, adolescentes, jóvenes y personas adultas de nuestras comunidades.</p>
+          <div class="about-panel"><p>Nos une el compromiso de educar con valores, respeto y ley, fortaleciendo la participación de las familias, el trabajo de nuestros docentes y el vínculo de cada centro escolar con su comunidad.</p></div>
         </div>
-        <div class="values">
-          <div class="value"><span>✦</span>Valores</div><div class="value"><span>🤝</span>Respeto</div><div class="value"><span>📚</span>Aprendizaje</div>
+        <div>
+          <span class="section-kicker">Nuestra esencia</span>
+          <h3 class="about-subtitle" style="margin-top:8px">Una red que educa y transforma</h3>
+          <div class="values">
+            <div class="value"><span>🤝</span>Respeto</div>
+            <div class="value"><span>⭐</span>Responsabilidad</div>
+            <div class="value"><span>📚</span>Compromiso educativo</div>
+            <div class="value"><span>🌱</span>Solidaridad</div>
+            <div class="value"><span>⚖️</span>Honestidad</div>
+            <div class="value"><span>🏫</span>Trabajo en equipo</div>
+          </div>
         </div>
+      </div>
+      <div class="about-details">
+        <article class="about-card"><h3><span>🎯</span>Nuestra misión</h3><p>Brindar una educación inclusiva, integral y de calidad, promoviendo valores, respeto, responsabilidad y compromiso, mediante el trabajo conjunto de docentes, estudiantes, familias y comunidad.</p></article>
+        <article class="about-card"><h3><span>🌟</span>Nuestra visión</h3><p>Ser una comunidad educativa reconocida por su compromiso con la formación integral, la calidad de los aprendizajes, la innovación pedagógica y el desarrollo de las comunidades rurales.</p></article>
+        <article class="about-card"><h3><span>💚</span>Nuestro compromiso</h3><p>Promover ambientes de aprendizaje seguros, inclusivos y participativos; acompañar el desarrollo de cada estudiante y fortalecer la mejora continua de los procesos educativos en nuestros centros escolares.</p></article>
+        <article class="about-card"><h3><span>👨‍👩‍👧‍👦</span>Trabajo con la comunidad</h3><p>Reconocemos a las familias, docentes, estudiantes y líderes comunitarios como parte fundamental de la tarea educativa y del crecimiento de nuestras comunidades.</p></article>
+      </div>
+      <h3 class="about-subtitle">Nuestra atención educativa</h3>
+      <p class="intro">Acompañamos diferentes modalidades para responder a las necesidades y oportunidades de aprendizaje de nuestras comunidades:</p>
+      <div class="values">
+        <div class="value"><span>🧸</span>Educación Inicial</div>
+        <div class="value"><span>📖</span>Primaria Multigrado</div>
+        <div class="value"><span>🏫</span>Primaria Comunitaria EDJA</div>
+        <div class="value"><span>✍️</span>Alfabetización</div>
+        <div class="value"><span>🎓</span>Secundaria a Distancia en el Campo</div>
       </div>
     </div></section>
     <section class="history page-view" id="historia"><div class="container">
