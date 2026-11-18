@@ -89,6 +89,12 @@
     @media(max-width:900px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.training-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}.news-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:600px){.history-timeline:before{left:35px}.history-item{grid-template-columns:70px 1fr;gap:15px}.history-card{padding:15px}.history-year{font-size:.74rem}.hero{min-height:530px;background-position:58% center}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:120px 21px 105px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.training-grid{grid-template-columns:1fr}.news-photo-grid{grid-template-columns:1fr;gap:13px}.news-photo-grid .gallery-card{display:grid;grid-template-columns:112px minmax(0,1fr);min-height:112px}.news-photo-grid .gallery-card img{height:100%;min-height:112px}.news-photo-grid .gallery-card figcaption{align-self:center;padding:12px}.news-photo-grid .gallery-card h3{font-size:.9rem}.news-photo-grid .gallery-card p{font-size:.78rem}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .cover-contact{position:absolute;z-index:3;right:max(22px,calc((100% - 1160px)/2));bottom:22px;width:min(365px,calc(100% - 44px));padding:17px 19px;border:1px solid rgba(255,255,255,.28);border-radius:15px;background:rgba(5,25,45,.88);backdrop-filter:blur(8px);box-shadow:0 12px 32px rgba(0,0,0,.25);color:#fff}
+    .cover-contact h2{font-size:1rem;color:#fff;margin:0 0 10px;letter-spacing:.02em}
+    .cover-contact p{font-size:.88rem;line-height:1.45;color:#eaf1f6;margin:7px 0}
+    .cover-contact a{color:#bce8c6;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+    .cover-contact .cover-hours{color:#fff;font-weight:700}
+    @media(max-width:700px){.hero{min-height:790px}.hero-inner{padding:105px 22px 310px}.cover-contact{right:16px;bottom:16px;width:calc(100% - 32px);padding:15px 16px}.cover-contact p{font-size:.84rem}}
   </style>
 </head>
 <body>
@@ -109,6 +115,12 @@
       <p>Una comunidad educativa que trabaja por una educación de calidad, con valores, respeto y compromiso con el futuro de nuestras niñas, niños y jóvenes.</p>
       <a class="btn btn-green" href="#centros">Conocer nuestros centros</a><a class="btn btn-light" href="#nosotros">Conócenos</a>
     </div>
+    <aside class="cover-contact" aria-label="Información de contacto rápido">
+      <h2>CONTACTO Y ATENCIÓN</h2>
+      <p> <strong>WhatsApp:</strong> <a href="https://wa.me/50587957080" target="_blank" rel="noopener noreferrer">8795 7080 · Escríbenos</a></p>
+      <p><strong>Correo:</strong> <a href="mailto:malthezjoshua261@gmail.com">malthezjoshua261@gmail.com</a></p>
+      <p class="cover-hours"><strong>Horario:</strong> lunes a sábado, 7:30 a. m. – 4:00 p. m.</p>
+    </aside>
   </section>
   <main>
     <section class="page-view" id="nosotros"><div class="container">
