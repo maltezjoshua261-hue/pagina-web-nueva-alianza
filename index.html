@@ -493,12 +493,29 @@
           event.preventDefault();
           const password=document.getElementById("bibliotecaNewPassword").value;
           if(password.length<8){setStatus(authStatus,"La contraseña debe tener al menos 8 caracteres.",true);return;}
+          setStatus(authStatus,"Verificando el enlace seguro...");
+          let {data:{session},error:sessionError}=await biblioteca.auth.getSession();
+          if(!session){
+            const hash=new URLSearchParams(window.location.hash.replace(/^#/,""));
+            const access_token=hash.get("access_token");
+            const refresh_token=hash.get("refresh_token");
+            if(access_token&&refresh_token){
+              const restored=await biblioteca.auth.setSession({access_token,refresh_token});
+              session=restored.data&&restored.data.session;
+              sessionError=restored.error;
+            }
+          }
+          if(!session){
+            setStatus(authStatus,"El enlace de recuperación ya no tiene una sesión válida. Solicita un enlace nuevo con «Crear / configurar acceso» y ábrelo directamente desde tu correo.",true);
+            return;
+          }
           setStatus(authStatus,"Guardando nueva contraseña...");
           const {error}=await biblioteca.auth.updateUser({password});
           if(error){setStatus(authStatus,"No se pudo guardar la contraseña: "+error.message,true);return;}
           recoveryForm.hidden=true;
           passwordRecoveryMode=false;
-          await updateAdminUI((await biblioteca.auth.getSession()).data.session);
+          const current=await biblioteca.auth.getSession();
+          await updateAdminUI(current.data.session);
           setStatus(authStatus,"Contraseña configurada correctamente. Ya puedes ingresar con tu correo y la nueva contraseña.");
         });
         document.getElementById("bibliotecaLogin").addEventListener("submit",async event=>{
