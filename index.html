@@ -45,6 +45,17 @@
     .values{display:grid;grid-template-columns:1fr;gap:12px}
     .value{display:flex;align-items:center;gap:15px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 17px;font-weight:700;color:var(--navy);box-shadow:0 5px 16px rgba(16,47,80,.04)}
     .value span{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;background:#eaf3ed;border-radius:12px;font-size:1.25rem}
+    .history{background:linear-gradient(180deg,#fff 0%,#f5f8f7 100%)}
+    .history-lead{max-width:820px;color:var(--muted);margin:0 0 34px}
+    .history-timeline{position:relative;max-width:920px;margin:0 auto;display:grid;gap:17px}
+    .history-timeline:before{content:"";position:absolute;left:91px;top:18px;bottom:18px;width:2px;background:linear-gradient(var(--green),#b7cbbd)}
+    .history-item{display:grid;grid-template-columns:74px 1fr;gap:34px;align-items:start;position:relative}
+    .history-year{background:var(--navy);color:#fff;border-radius:12px;padding:10px 7px;text-align:center;font-weight:800;font-size:.82rem;box-shadow:0 5px 13px rgba(16,47,80,.13)}
+    .history-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 21px;box-shadow:0 5px 17px rgba(16,47,80,.045)}
+    .history-card h3{margin:0 0 7px;color:var(--navy);font-size:1.08rem}
+    .history-card p{margin:0;color:#596e7e;font-size:.92rem}
+    .history-note{margin:28px auto 0;max-width:920px;background:#eaf3ed;border-left:4px solid var(--green);border-radius:10px;padding:17px 20px;color:#3f5b4b;font-size:.9rem}
+    .history-caption{max-width:920px;margin:28px auto 0;text-align:center;color:var(--muted);font-size:.82rem}
     .schools{background:var(--pale);position:relative}
     .school-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     .school{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;min-height:158px;box-shadow:0 5px 17px rgba(16,47,80,.045);transition:transform .22s,box-shadow .22s}
@@ -73,7 +84,7 @@
     .footer-mark{display:flex;align-items:center;gap:12px}
     .footer-seal{width:38px;height:38px;border:1px solid rgba(255,255,255,.35);border-radius:11px;display:grid;place-items:center;font-weight:900}
     @media(max-width:900px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:600px){.hero{min-height:530px;background-position:58% center}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:120px 21px 105px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:600px){.history-timeline:before{left:35px}.history-item{grid-template-columns:70px 1fr;gap:15px}.history-card{padding:15px}.history-year{font-size:.74rem}.hero{min-height:530px;background-position:58% center}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:120px 21px 105px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
@@ -84,7 +95,7 @@
       <a class="brand" href="#inicio" aria-label="Inicio NER Nueva Alianza"><div class="seal">NER</div><div><strong>NUEVA ALIANZA</strong><small>Red Educativa</small></div></a>
       <button class="menu" aria-label="Abrir menú" aria-expanded="false" onclick="const n=document.querySelector('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
       <nav aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#historia">Nuestra historia</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -107,6 +118,21 @@
           <div class="value"><span>✦</span>Valores</div><div class="value"><span>🤝</span>Respeto</div><div class="value"><span>📚</span>Aprendizaje</div>
         </div>
       </div>
+    </div></section>
+    <section class="history" id="historia"><div class="container">
+      <span class="section-kicker">Memoria y legado comunitario</span><h2>Nuestra historia</h2>
+      <p class="history-lead">La historia del Centro Escolar Nueva Alianza es fruto de la organización, el esfuerzo y la esperanza de las familias de El Bote. Desde una pequeña casa comunitaria hasta la infraestructura actual, generaciones de pobladores, docentes y estudiantes han contribuido a mantener viva la educación.</p>
+      <div class="history-timeline">
+        <article class="history-item"><div class="history-year">1984</div><div class="history-card"><h3>Una casa para la comunidad</h3><p>Se construyó una sencilla casa comunitaria de madera en un terreno cuyo propietario, don Pedro Pablo Tinoco, autorizó su uso para fines comunitarios. Las familias aportaron madera y zinc. La construcción tenía piso de tierra, techo de zinc y mobiliario rústico. Estaba frente a la Iglesia Betania, donde actualmente se encuentra la casa de don Francisco Ortuño.</p></div></article>
+        <article class="history-item"><div class="history-year">1985–1987</div><div class="history-card"><h3>Primeras experiencias educativas</h3><p>La memoria de la comunidad recuerda experiencias de alfabetización y enseñanza básica a cargo de alfabetizadores y docentes comunitarios. También se recuerda a una maestra llamada Teresa, procedente de Matagalpa.</p></div></article>
+        <article class="history-item"><div class="history-year">1989</div><div class="history-card"><h3>Inicio de la primaria comunitaria</h3><p>Comenzó de manera organizada la enseñanza primaria con primer grado y la educación de adultos, sostenidas con el apoyo económico de los padres de familia. El maestro comunitario empírico Ricardo Antonio Ruiz estuvo a cargo de este proceso. Para entonces, la escuela ya era conocida como Nueva Alianza.</p></div></article>
+        <article class="history-item"><div class="history-year">1991</div><div class="history-card"><h3>Atención multigrado</h3><p>La escuela atendía primero y segundo grado en la mañana, y tercero y cuarto grado por la tarde, debido a que solamente disponía de un espacio de uso múltiple. También se desarrollaban actividades de educación de adultos en casas particulares.</p></div></article>
+        <article class="history-item"><div class="history-year">1990–2000</div><div class="history-card"><h3>Institucionalización y reconocimiento</h3><p>Durante este período se desarrolló la institucionalización ante el Ministerio de Educación (anteriormente MED), el registro oficial del centro y la asignación de las primeras plazas presupuestadas para docentes normalistas. El primer director formal consignado en la información histórica local es William Herrera.</p></div></article>
+        <article class="history-item"><div class="history-year">1995–1996</div><div class="history-card"><h3>Primeras aulas construidas</h3><p>Con el apoyo del Fondo de Inversión de Emergencia (FISE), se construyeron las primeras tres aulas, incluyendo un aula separada y otra de uso multifuncional. En esta etapa se realizó la primera promoción de sexto grado de primaria de la Escuela Nueva Alianza.</p></div></article>
+        <article class="history-item"><div class="history-year">2020–2021</div><div class="history-card"><h3>Una infraestructura para una nueva etapa</h3><p>Se construyó una moderna infraestructura escolar, inaugurada en julio de 2021, con una inversión aproximada de 26 millones de córdobas. Esta obra representa un importante avance para la educación de la comunidad de El Bote.</p></div></article>
+      </div>
+      <div class="history-note"><strong>Reconocimiento a quienes hicieron posible esta historia.</strong> Entre los primeros padres y pobladores que impulsaron las gestiones comunitarias se recuerda a Melitonio Gutiérrez Montenegro, Crecencio Hernández Ochoa, María Rivas (familia Lorente), Simón Hernández, Socorro Ruiz, Narciso Gutiérrez y Rosario Gadea. Su colaboración, junto con la de muchas otras familias, permitió abrir camino a la educación.</div>
+      <p class="history-caption">Entre los docentes recordados en las primeras etapas también figuran Oscar Arnulfo Pérez Hernández, Martha Toruño, Maribel Lanuza y Pablo Úbeda, procedente de San Rafael del Norte. La comunidad conserva además testimonios de otros educadores que contribuyeron al crecimiento del centro.</p>
     </div></section>
     <section class="schools" id="centros"><div class="container">
       <span class="section-kicker">Nuestra red educativa</span><h2>Ocho centros, una comunidad</h2>
