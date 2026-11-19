@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maltezjoshua261-hue.github.io/pagina-web-nueva-alianza/sitemap.xml
