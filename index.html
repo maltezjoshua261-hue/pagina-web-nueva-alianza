@@ -74,6 +74,13 @@
     .section-kicker{color:var(--green);font-weight:800;font-size:.76rem;text-transform:uppercase;letter-spacing:.14em}
     h2{font-size:clamp(1.9rem,3.4vw,2.65rem);color:var(--navy);line-height:1.15;margin:8px 0 13px;letter-spacing:-.025em}
     .intro{max-width:720px;color:var(--muted);margin:0 0 31px}
+    .ner-stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px;margin-top:28px}
+    .ner-stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:25px 20px;box-shadow:0 8px 22px rgba(23,59,77,.06);transition:transform .22s,box-shadow .22s}
+    .ner-stat:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(23,59,77,.12)}
+    .ner-stat-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:#E7F1EB;font-size:1.35rem;margin-bottom:15px}
+    .ner-stat strong{display:block;color:var(--green);font-size:1.75rem;line-height:1.2;margin-bottom:7px}
+    .ner-stat h3{color:var(--navy);font-size:1rem;margin:0 0 7px}
+    .ner-stat p{color:var(--muted);font-size:.88rem;margin:0}
     .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
     .about-panel{background:linear-gradient(135deg,#F3F6F3,#f7faf8);padding:26px 28px;border-radius:16px;border-left:4px solid var(--green)}
     .about-panel p{margin:0;color:#42576a}
@@ -140,8 +147,8 @@
     footer small{color:#aebfce}
     .footer-mark{display:flex;align-items:center;gap:12px}
     .footer-seal{width:38px;height:38px;border:1px solid rgba(255,255,255,.35);border-radius:11px;display:grid;place-items:center;font-weight:900}
-    @media(max-width:900px){nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.training-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}.news-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:600px){.history-timeline:before{left:35px}.history-item{grid-template-columns:70px 1fr;gap:15px}.history-card{padding:15px}.history-year{font-size:.74rem}.hero{min-height:530px;background-position:58% center}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:120px 21px 105px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.training-grid{grid-template-columns:1fr}.news-photo-grid{grid-template-columns:1fr;gap:13px}.news-photo-grid .gallery-card{display:grid;grid-template-columns:112px minmax(0,1fr);min-height:112px}.news-photo-grid .gallery-card img{height:100%;min-height:112px}.news-photo-grid .gallery-card figcaption{align-self:center;padding:12px}.news-photo-grid .gallery-card h3{font-size:.9rem}.news-photo-grid .gallery-card p{font-size:.78rem}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:900px){.ner-stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;padding:18px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:9px}nav.open{display:flex}.menu{display:block}.school-grid{grid-template-columns:repeat(2,1fr)}.training-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-grid{grid-template-columns:1fr;gap:25px}.values{grid-template-columns:repeat(3,1fr)}.news-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:600px){.ner-stats-grid{grid-template-columns:1fr}.history-timeline:before{left:35px}.history-item{grid-template-columns:70px 1fr;gap:15px}.history-card{padding:15px}.history-year{font-size:.74rem}.hero{min-height:530px;background-position:58% center}.topbar{font-size:.72rem;padding:8px 17px}.hero-inner{padding:120px 21px 105px}.hero p{font-size:1rem}main section{padding:57px 19px}.news-grid,.contact-grid{grid-template-columns:1fr}.training-grid{grid-template-columns:1fr}.news-photo-grid{grid-template-columns:1fr;gap:13px}.news-photo-grid .gallery-card{display:grid;grid-template-columns:112px minmax(0,1fr);min-height:112px}.news-photo-grid .gallery-card img{height:100%;min-height:112px}.news-photo-grid .gallery-card figcaption{align-self:center;padding:12px}.news-photo-grid .gallery-card h3{font-size:.9rem}.news-photo-grid .gallery-card p{font-size:.78rem}.values{grid-template-columns:1fr}.brand{min-width:0}.brand strong{font-size:.9rem}.seal{width:45px;height:45px}.school-grid{gap:11px}.school{padding:16px;min-height:150px}.footer-inner{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
     .cover-contact{position:absolute;z-index:3;right:max(22px,calc((100% - 1160px)/2));bottom:22px;width:min(365px,calc(100% - 44px));padding:17px 19px;border:1px solid rgba(255,255,255,.28);border-radius:15px;background:rgba(5,25,45,.88);backdrop-filter:blur(8px);box-shadow:0 12px 32px rgba(0,0,0,.25);color:#fff}
     .cover-contact h2{font-size:1rem;color:#fff;margin:0 0 10px;letter-spacing:.02em}
@@ -271,7 +278,7 @@
       <a class="brand" href="#inicio" aria-label="Inicio NER Nueva Alianza"><div class="seal">NER</div><div><strong>NUEVA ALIANZA</strong><small>Red Educativa</small></div></a>
       <button class="menu" aria-label="Abrir menú" aria-expanded="false" onclick="const n=document.querySelector('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
       <nav aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#nosotros">Quiénes somos</a><a href="#historia">Nuestra historia</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#formacion">Formación docente</a><a href="#modalidades">Modalidades</a><a href="#inclusion">Educación inclusiva</a><a href="#recursos-descargas">Recursos y Descargas</a><a href="#biblioteca">Biblioteca digital</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+        <a href="#inicio">Inicio</a><a href="#datos">Datos del NER</a><a href="#nosotros">Quiénes somos</a><a href="#historia">Nuestra historia</a><a href="#centros">Centros educativos</a><a href="#noticias">Noticias</a><a href="#formacion">Formación docente</a><a href="#modalidades">Modalidades</a><a href="#inclusion">Educación inclusiva</a><a href="#recursos-descargas">Recursos y Descargas</a><a href="#biblioteca">Biblioteca digital</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -292,6 +299,17 @@
     </aside>
   </section>
   <main id="contenido-principal">
+    <section class="page-view" id="datos"><div class="container">
+      <span class="section-kicker">Conoce nuestra red educativa</span>
+      <h2>El NER Nueva Alianza en datos</h2>
+      <p class="intro">Somos una comunidad educativa rural que articula el trabajo de ocho centros escolares en el municipio de El Cuá, departamento de Jinotega.</p>
+      <div class="ner-stats-grid">
+        <article class="ner-stat"><span class="ner-stat-icon">🏫</span><strong>8</strong><h3>Centros educativos</h3><p>Una red de centros que trabaja de manera articulada.</p></article>
+        <article class="ner-stat"><span class="ner-stat-icon">📍</span><strong>El Bote</strong><h3>Ubicación del núcleo</h3><p>Municipio de El Cuá, departamento de Jinotega, Nicaragua.</p></article>
+        <article class="ner-stat"><span class="ner-stat-icon">📚</span><strong>3</strong><h3>Niveles educativos</h3><p>Educación Inicial, Primaria y Secundaria.</p></article>
+        <article class="ner-stat"><span class="ner-stat-icon">🌱</span><strong>Rural</strong><h3>Identidad comunitaria</h3><p>Educación vinculada a las familias y comunidades de nuestro entorno.</p></article>
+      </div>
+    </div></section>
     <section class="page-view" id="nosotros"><div class="container">
       <div class="about-grid">
         <div><span class="section-kicker">Nuestra identidad institucional</span><h2>¿Quiénes somos?</h2>
