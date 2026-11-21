@@ -635,7 +635,7 @@
         L.marker(point).addTo(map).bindPopup('<strong>'+school.name+'</strong><br><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a>');
       });
       map.fitBounds(bounds,{padding:[28,28]});
-      function resizeMap(){if(el.offsetWidth>0)map.invalidateSize();}
+      function resizeMap(){if(el.offsetWidth>0){map.invalidateSize();map.fitBounds(bounds,{padding:[28,28]});}}
       window.addEventListener("hashchange",()=>window.setTimeout(resizeMap,180));
       window.addEventListener("resize",resizeMap);
       window.setTimeout(resizeMap,250);
