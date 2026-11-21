@@ -220,6 +220,17 @@
     .whatsapp-float .wa-icon{font-size:1.35rem;line-height:1}
     @media(max-width:600px){.resource-links{grid-template-columns:1fr}.resource-link-card{align-items:flex-start;padding:18px}.whatsapp-float{right:14px;bottom:14px;padding:13px 15px}.whatsapp-float .wa-label{display:none}.whatsapp-float .wa-icon{font-size:1.65rem}}
 
+  
+    /* Mapa de los centros educativos del NER */
+    .ner-map-section{margin-top:34px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(23,59,77,.07)}
+    .ner-map-section h3{margin:0 0 8px;color:var(--navy);font-size:1.35rem}
+    .ner-map-note{margin:0 0 18px;color:var(--muted);font-size:.9rem}
+    #nerSchoolsMap{width:100%;height:480px;border-radius:13px;overflow:hidden;background:#e8efec;z-index:1}
+    .ner-map-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:17px}
+    .ner-map-legend a,.ner-map-legend span{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f8faf8;color:var(--navy);font-size:.82rem;font-weight:700}
+    .ner-map-legend a:hover{border-color:var(--green);color:var(--green)}
+    .ner-map-pending{margin-top:14px;padding:14px 16px;border-left:4px solid var(--gold);background:#fbf7ee;border-radius:9px;color:#655638;font-size:.88rem}
+    @media(max-width:700px){#nerSchoolsMap{height:390px}.ner-map-section{padding:17px}.ner-map-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
   </style>
 </head>
 <body>
@@ -312,6 +323,23 @@
         <article class="school"><div class="school-num">06</div><h3>La Unión No. 3</h3><p>Centro educativo del NER</p><a class="btn btn-green" style="margin-top:14px;font-size:.78rem;padding:9px 13px" href="https://maps.app.goo.gl/eBTTnZ4tW52JezpT8" target="_blank" rel="noopener noreferrer">Cómo llegar</a></article>
         <article class="school"><div class="school-num">07</div><h3>Santa Lucía</h3><p>Centro educativo del NER</p><a class="btn btn-green" style="margin-top:14px;font-size:.78rem;padding:9px 13px" href="https://maps.app.goo.gl/mYHFBfULFgF8LXom6" target="_blank" rel="noopener noreferrer">Cómo llegar</a></article>
         <article class="school"><div class="school-num">08</div><h3>Sector de Limón</h3><p>Centro educativo del NER</p><a class="btn btn-green" style="margin-top:14px;font-size:.78rem;padding:9px 13px" href="https://maps.app.goo.gl/GCA1uSHarnNV2RUEA?g_st=ic" target="_blank" rel="noopener noreferrer">Cómo llegar</a></article>
+      </div>
+      <div class="ner-map-section" aria-labelledby="nerMapTitle">
+        <span class="section-kicker">Ubicación geográfica</span>
+        <h3 id="nerMapTitle">Mapa de los centros educativos del NER</h3>
+        <p class="ner-map-note">El mapa muestra únicamente las ubicaciones identificadas en la referencia geográfica del MINED. Selecciona un marcador para consultar el centro y abrir su ubicación en Google Maps.</p>
+        <div id="nerSchoolsMap" role="application" aria-label="Mapa interactivo de los centros educativos del NER Nueva Alianza"></div>
+        <div class="ner-map-legend" aria-label="Centros educativos y enlaces de ubicación">
+          <a href="https://www.google.com/maps?q=13.387807,-85.564781" target="_blank" rel="noopener noreferrer">Nueva Alianza ↗</a>
+          <a href="https://www.google.com/maps?q=13.401500,-85.575840" target="_blank" rel="noopener noreferrer">Hugo Chávez Frías ↗</a>
+          <a href="https://www.google.com/maps?q=13.405530,-85.559700" target="_blank" rel="noopener noreferrer">Rosa Sarmiento ↗</a>
+          <a href="https://www.google.com/maps?q=13.357260,-85.532100" target="_blank" rel="noopener noreferrer">La Esperanza ↗</a>
+          <a href="https://www.google.com/maps?q=13.375070,-85.513220" target="_blank" rel="noopener noreferrer">La Unión N.º 3 ↗</a>
+          <a href="https://www.google.com/maps?q=13.395650,-85.504620" target="_blank" rel="noopener noreferrer">Santa Lucía ↗</a>
+          <a href="https://maps.app.goo.gl/GCA1uSHarnNV2RUEA?g_st=ic" target="_blank" rel="noopener noreferrer">Sector del Limón ↗</a>
+          <a href="https://www.google.com/maps?q=13.394922,-85.545695" target="_blank" rel="noopener noreferrer">Nueva Jerusalén ↗</a>
+        </div>
+        <p class="ner-map-pending"><strong>Sector del Limón:</strong> se conserva su enlace de ubicación actual del portal. El archivo de georreferencia del MINED no contiene un marcador identificable con ese nombre, por eso no se inventó una coordenada ni se colocó un pin aproximado.</p>
       </div>
     </div></section>
     <section class="page-view" id="noticias"><div class="container">
@@ -582,6 +610,35 @@
       if(biblioteca){loadPublicLibrary();}
       window.addEventListener("hashchange", showView);
       showView();
+    })();
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    (function(){
+      const el=document.getElementById("nerSchoolsMap");
+      if(!el||!window.L)return;
+      const schools=[
+        {name:"Centro Escolar Nueva Alianza",lat:13.387807,lng:-85.564781},
+        {name:"Centro Escolar Hugo Chávez Frías",lat:13.401500,lng:-85.575840},
+        {name:"Centro Escolar Rosa Sarmiento",lat:13.405530,lng:-85.559700},
+        {name:"Centro Escolar La Esperanza",lat:13.357260,lng:-85.532100},
+        {name:"Centro Escolar La Unión N.º 3",lat:13.375070,lng:-85.513220},
+        {name:"Centro Escolar Santa Lucía",lat:13.395650,lng:-85.504620},
+        {name:"Centro Escolar Nueva Jerusalén",lat:13.394922,lng:-85.545695}
+      ];
+      const map=L.map(el,{scrollWheelZoom:false});
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+      const bounds=[];
+      schools.forEach(school=>{
+        const point=[school.lat,school.lng];bounds.push(point);
+        L.marker(point).addTo(map).bindPopup('<strong>'+school.name+'</strong><br><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a>');
+      });
+      map.fitBounds(bounds,{padding:[28,28]});
+      function resizeMap(){if(el.offsetWidth>0)map.invalidateSize();}
+      window.addEventListener("hashchange",()=>window.setTimeout(resizeMap,180));
+      window.addEventListener("resize",resizeMap);
+      window.setTimeout(resizeMap,250);
     })();
   </script>
 </body>
