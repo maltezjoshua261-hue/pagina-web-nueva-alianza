@@ -619,22 +619,20 @@
       const el=document.getElementById("nerSchoolsMap");
       if(!el||!window.L)return;
       const schools=[
-        {name:"Centro Escolar Nueva Alianza",lat:13.387807,lng:-85.564781},
-        {name:"Centro Escolar Hugo Chávez Frías",lat:13.401500,lng:-85.575840},
-        {name:"Centro Escolar Rosa Sarmiento",lat:13.405530,lng:-85.559700},
-        {name:"Centro Escolar La Esperanza",lat:13.357260,lng:-85.532100},
-        {name:"Centro Escolar La Unión N.º 3",lat:13.375070,lng:-85.513220},
-        {name:"Centro Escolar Santa Lucía",lat:13.395650,lng:-85.504620},
-        {name:"Centro Escolar Nueva Jerusalén",lat:13.394922,lng:-85.545695}
+        {name:"Centro Escolar Nueva Alianza",shortName:"NUEVA ALIANZA",address:"DE LA DELEGACION MUNICIPAL 17 KM AL NORTE.",lat:13.387807,lng:-85.564781},
+        {name:"Centro Escolar Hugo Chávez Frías",shortName:"CENTRO ESCOLAR HUGO CHAVEZ FRIAS",address:"DELEGACION MUNICIPAL 21 KM AL ESTE.",lat:13.401500,lng:-85.575840},
+        {name:"Centro Escolar Rosa Sarmiento",shortName:"ROSA SARMIENTO",address:"DEL BOTE 8 KM AL ESTE.",lat:13.405530,lng:-85.559700},
+        {name:"Centro Escolar La Esperanza",shortName:"LA ESPERANZA",address:"DE LA DELEGACIÓN MUNIC. 30KMS AL NORTE.",lat:13.357260,lng:-85.532100},
+        {name:"Centro Escolar La Unión N.º 3",shortName:"LA UNIÓN Nº 3",address:"DE LA DELEGACION MUNICIPAL 25 KMS AL NORESTE.",lat:13.375070,lng:-85.513220},
+        {name:"Centro Escolar Santa Lucía",shortName:"SANTA LUCIA",address:"DE LA DELEGACIÓN MUNIC. 35KMS AL NORTE.",lat:13.395650,lng:-85.504620},
+        {name:"Centro Escolar Nueva Jerusalén",shortName:"NUEVA JERUSALEN",address:"DEL BOTE 6KM AL ESTE.",lat:13.394922,lng:-85.545695}
       ];
       const map=L.map(el,{scrollWheelZoom:false});
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
       const bounds=[];
       schools.forEach(school=>{
         const point=[school.lat,school.lng];bounds.push(point);
-        const popupContent=school.name==="Centro Escolar Nueva Alianza"
-          ? '<div style="width:260px;font-family:Arial,sans-serif;line-height:1.45;color:#263D42"><img src="https://serviciosenlinea.mined.gob.ni/mapa-de-la-educacion/assets/leaflet/images/EncabezadoPoppup.png" alt="Centro Educativo" style="display:block;width:100%;height:auto;border-radius:7px 7px 0 0;margin-bottom:9px"><div style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#2F796B;text-transform:uppercase;margin-bottom:5px">Centro Educativo</div><div style="font-size:14px;margin-bottom:5px"><strong>Nombre:</strong> NUEVA ALIANZA</div><div style="font-size:13px;margin-bottom:10px"><strong>Dirección:</strong> DE LA DELEGACION MUNICIPAL 17 KM AL NORTE.</div><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#2F796B;color:#fff;padding:7px 10px;border-radius:6px;text-decoration:none;font-weight:700">Abrir en Google Maps ↗</a></div>'
-          : '<div style="font-family:Arial,sans-serif"><strong>'+school.name+'</strong><br><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a></div>';
+        const popupContent='<div style="width:260px;max-width:100%;font-family:Arial,sans-serif;line-height:1.45;color:#263D42"><img src="https://serviciosenlinea.mined.gob.ni/mapa-de-la-educacion/assets/leaflet/images/EncabezadoPoppup.png" alt="Centro Educativo" style="display:block;width:100%;height:auto;border-radius:7px 7px 0 0;margin-bottom:9px"><div style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#2F796B;text-transform:uppercase;margin-bottom:5px">Centro Educativo</div><div style="font-size:14px;margin-bottom:5px"><strong>Nombre:</strong> '+school.shortName+'</div><div style="font-size:13px;margin-bottom:10px"><strong>Dirección:</strong> '+school.address+'</div><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#2F796B;color:#fff;padding:7px 10px;border-radius:6px;text-decoration:none;font-weight:700">Abrir en Google Maps ↗</a></div>';
         L.marker(point).addTo(map).bindPopup(popupContent);
       });
       map.fitBounds(bounds,{padding:[28,28]});
