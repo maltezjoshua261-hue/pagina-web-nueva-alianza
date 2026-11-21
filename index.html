@@ -632,7 +632,10 @@
       const bounds=[];
       schools.forEach(school=>{
         const point=[school.lat,school.lng];bounds.push(point);
-        L.marker(point).addTo(map).bindPopup('<strong>'+school.name+'</strong><br><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a>');
+        const popupContent=school.name==="Centro Escolar Nueva Alianza"
+          ? '<div style="width:260px;font-family:Arial,sans-serif;line-height:1.45;color:#263D42"><img src="https://serviciosenlinea.mined.gob.ni/mapa-de-la-educacion/assets/leaflet/images/EncabezadoPoppup.png" alt="Centro Educativo" style="display:block;width:100%;height:auto;border-radius:7px 7px 0 0;margin-bottom:9px"><div style="font-size:11px;font-weight:800;letter-spacing:.08em;color:#2F796B;text-transform:uppercase;margin-bottom:5px">Centro Educativo</div><div style="font-size:14px;margin-bottom:5px"><strong>Nombre:</strong> NUEVA ALIANZA</div><div style="font-size:13px;margin-bottom:10px"><strong>Dirección:</strong> DE LA DELEGACION MUNICIPAL 17 KM AL NORTE.</div><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#2F796B;color:#fff;padding:7px 10px;border-radius:6px;text-decoration:none;font-weight:700">Abrir en Google Maps ↗</a></div>'
+          : '<div style="font-family:Arial,sans-serif"><strong>'+school.name+'</strong><br><a href="https://www.google.com/maps?q='+school.lat+','+school.lng+'" target="_blank" rel="noopener noreferrer">Abrir en Google Maps ↗</a></div>';
+        L.marker(point).addTo(map).bindPopup(popupContent);
       });
       map.fitBounds(bounds,{padding:[28,28]});
       function resizeMap(){if(el.offsetWidth>0){map.invalidateSize();map.fitBounds(bounds,{padding:[28,28]});}}
