@@ -229,6 +229,7 @@
     .ner-map-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:17px}
     .ner-map-legend a,.ner-map-legend span{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f8faf8;color:var(--navy);font-size:.82rem;font-weight:700}
     .ner-map-legend a:hover{border-color:var(--green);color:var(--green)}
+    .ner-map-legend a small{display:block;margin-top:3px;color:var(--muted);font-size:.72rem;font-weight:600}
     .ner-map-pending{margin-top:14px;padding:14px 16px;border-left:4px solid var(--gold);background:#fbf7ee;border-radius:9px;color:#655638;font-size:.88rem}
     @media(max-width:700px){#nerSchoolsMap{height:390px}.ner-map-section{padding:17px}.ner-map-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
   
@@ -360,14 +361,14 @@
         <p class="ner-map-note">El mapa muestra únicamente las ubicaciones identificadas en la referencia geográfica del MINED. Selecciona un marcador para consultar el centro y abrir su ubicación en Google Maps.</p>
         <div id="nerSchoolsMap" role="application" aria-label="Mapa interactivo de los centros educativos del NER Nueva Alianza"></div>
         <div class="ner-map-legend" aria-label="Centros educativos y enlaces de ubicación">
-          <a href="https://www.google.com/maps?q=13.387807,-85.564781" target="_blank" rel="noopener noreferrer">Nueva Alianza ↗</a>
-          <a href="https://www.google.com/maps?q=13.401500,-85.575840" target="_blank" rel="noopener noreferrer">Hugo Chávez Frías ↗</a>
-          <a href="https://www.google.com/maps?q=13.405530,-85.559700" target="_blank" rel="noopener noreferrer">Rosa Sarmiento ↗</a>
-          <a href="https://www.google.com/maps?q=13.357260,-85.532100" target="_blank" rel="noopener noreferrer">La Esperanza ↗</a>
-          <a href="https://www.google.com/maps?q=13.375070,-85.513220" target="_blank" rel="noopener noreferrer">La Unión N.º 3 ↗</a>
-          <a href="https://www.google.com/maps?q=13.395650,-85.504620" target="_blank" rel="noopener noreferrer">Santa Lucía ↗</a>
-          <a href="https://maps.app.goo.gl/GCA1uSHarnNV2RUEA?g_st=ic" target="_blank" rel="noopener noreferrer">Sector del Limón ↗</a>
-          <a href="https://www.google.com/maps?q=13.394922,-85.545695" target="_blank" rel="noopener noreferrer">Nueva Jerusalén ↗</a>
+          <a href="https://www.google.com/maps?q=13.387807,-85.564781" target="_blank" rel="noopener noreferrer">Nueva Alianza ↗<small>Código MINED: 17683</small></a>
+          <a href="https://www.google.com/maps?q=13.401500,-85.575840" target="_blank" rel="noopener noreferrer">Hugo Chávez Frías ↗<small>Código MINED: 39183</small></a>
+          <a href="https://www.google.com/maps?q=13.405530,-85.559700" target="_blank" rel="noopener noreferrer">Rosa Sarmiento ↗<small>Código MINED: 29271</small></a>
+          <a href="https://www.google.com/maps?q=13.357260,-85.532100" target="_blank" rel="noopener noreferrer">La Esperanza ↗<small>Código MINED: 17751</small></a>
+          <a href="https://www.google.com/maps?q=13.375070,-85.513220" target="_blank" rel="noopener noreferrer">La Unión N.º 3 ↗<small>Código MINED: 17858</small></a>
+          <a href="https://www.google.com/maps?q=13.395650,-85.504620" target="_blank" rel="noopener noreferrer">Santa Lucía ↗<small>Código MINED: 17880</small></a>
+          <a href="https://maps.app.goo.gl/GCA1uSHarnNV2RUEA?g_st=ic" target="_blank" rel="noopener noreferrer">Sector del Limón ↗<small>Código MINED: 37038</small></a>
+          <a href="https://www.google.com/maps?q=13.394922,-85.545695" target="_blank" rel="noopener noreferrer">Nueva Jerusalén ↗<small>Código MINED: 30870</small></a>
         </div>
         <p class="ner-map-pending"><strong>Sector del Limón:</strong> se conserva su enlace de ubicación actual del portal. El archivo de georreferencia del MINED no contiene un marcador identificable con ese nombre, por eso no se inventó una coordenada ni se colocó un pin aproximado.</p>
       </div>
